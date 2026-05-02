@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Structure Trade Lab — Forex trading insights from 6+ years of experience. Learn market structure, risk management, and get the best broker setup.">
-    <title>Structure Trade Lab — Trade with Structure. Trade with a Plan.</title>
+    <meta name="description" content="Structure Trade Lab — Critical forex trading education from 6+ years of experience. Learn leverage, risk management, position sizing, and what to know before you start trading.">
+    <title>Structure Trade Lab — Critical Things to Know Before Trading</title>
     <style>
         * {
             margin: 0;
@@ -27,22 +27,29 @@
             color: white;
             padding: 20px 0;
             border-bottom: 3px solid #00b4d8;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        header h1 {
-            font-size: 1.8rem;
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
         }
-        header p {
+        .logo h1 {
+            font-size: 1.5rem;
+        }
+        .logo p {
+            font-size: 0.8rem;
             color: #a0c4e2;
-            margin-top: 5px;
-        }
-        nav {
-            margin-top: 10px;
         }
         nav a {
             color: white;
             text-decoration: none;
-            margin-right: 20px;
+            margin-left: 25px;
             font-size: 0.9rem;
+            transition: color 0.2s;
         }
         nav a:hover {
             color: #00b4d8;
@@ -50,46 +57,42 @@
         .hero {
             background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%);
             color: white;
-            padding: 60px 0;
+            padding: 80px 0;
             text-align: center;
         }
         .hero h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
+            line-height: 1.3;
         }
         .hero p {
             font-size: 1.2rem;
             max-width: 700px;
-            margin: 0 auto 30px;
+            margin: 0 auto;
             color: #cce4f0;
         }
-        .btn {
-            display: inline-block;
-            background: #00b4d8;
-            color: #0a2540;
-            padding: 14px 32px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-        }
-        .btn:hover {
-            background: #0096b8;
-            transform: translateY(-2px);
-        }
         .section {
-            padding: 50px 0;
+            padding: 60px 0;
             border-bottom: 1px solid #e0e0e0;
+        }
+        .section:last-of-type {
+            border-bottom: none;
         }
         .section h2 {
             font-size: 2rem;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
+            text-align: center;
             color: #0a2540;
         }
-        .grid {
+        .section-subhead {
+            text-align: center;
+            color: #6c757d;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+        .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
         .card {
@@ -98,128 +101,267 @@
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             border: 1px solid #e0e0e0;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
         .card h3 {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             color: #0a2540;
+            font-size: 1.2rem;
         }
-        .badge {
+        .card p {
+            color: #4a5568;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        .card a {
+            color: #00b4d8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .card a:hover {
+            text-decoration: underline;
+        }
+        .tool-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        .btn-outline {
             display: inline-block;
+            background: transparent;
+            border: 2px solid #00b4d8;
+            color: #0a2540;
+            padding: 10px 28px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            margin-top: 20px;
+            transition: all 0.2s;
+        }
+        .btn-outline:hover {
             background: #00b4d8;
             color: #0a2540;
-            font-size: 0.7rem;
-            padding: 2px 8px;
-            border-radius: 20px;
-            font-weight: bold;
-            margin-bottom: 10px;
+        }
+        .checklist-item {
+            background: white;
+            margin: 15px 0;
+            padding: 20px 25px;
+            border-radius: 12px;
+            border-left: 4px solid #00b4d8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: transform 0.2s;
+        }
+        .checklist-item:hover {
+            transform: translateX(5px);
+        }
+        .checklist-item h3 {
+            margin-bottom: 8px;
+            color: #0a2540;
+        }
+        .checklist-item p {
+            color: #4a5568;
+        }
+        .about-box {
+            background: white;
+            padding: 35px;
+            border-radius: 16px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .about-box p {
+            margin-bottom: 15px;
+            color: #4a5568;
         }
         footer {
             background: #0a2540;
             color: #a0c4e2;
             text-align: center;
-            padding: 30px 0;
-            margin-top: 50px;
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+        .footer-disclosure {
+            font-size: 0.75rem;
+            max-width: 900px;
+            margin: 0 auto 20px;
+            line-height: 1.5;
         }
         footer a {
             color: #00b4d8;
             text-decoration: none;
         }
+        footer a:hover {
+            text-decoration: underline;
+        }
         @media (max-width: 768px) {
             .hero h2 { font-size: 1.8rem; }
             .section h2 { font-size: 1.5rem; }
+            .header-flex { flex-direction: column; gap: 15px; }
+            nav a { margin: 0 12px; font-size: 0.85rem; }
+            .checklist-item { padding: 15px; }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>📐 Structure Trade Lab</h1>
-            <p>Trade with Structure. Trade with a Plan.</p>
+        <div class="container header-flex">
+            <div class="logo">
+                <h1>📐 Structure Trade Lab</h1>
+                <p>Trade with Structure. Trade with a Plan.</p>
+            </div>
             <nav>
                 <a href="/">Home</a>
-                <a href="https://blog.structuretradelab.com">Blog</a>
-                <a href="https://tools.structuretradelab.com">Tools</a>
+                <a href="/blog/">Blog</a>
+                <a href="/tools/">Tools</a>
+                <a href="/about/">About</a>
             </nav>
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h2>6+ Years Trading Experience.<br>Now Helping You Trade Better.</h2>
-            <p>No hype. No get-rich-quick promises. Just systematic market structure analysis, risk management, and transparent broker reviews.</p>
-            <a href="https://one.exnessonelink.com/a/uj0rc71m" class="btn" target="_blank">▶ Open Your Exness Account</a>
+            <h2>6+ Years Trading Experience.<br>What I Wish I Knew Before Starting.</h2>
+            <p>No hype. No get-rich-quick promises. Just real lessons from years of screen time — leverage, risk management, position sizing, and trading psychology.</p>
         </div>
     </section>
 
     <div class="container">
+        <!-- Critical Things to Know Section -->
         <section class="section">
-            <h2>Why I Use Exness</h2>
-            <div class="grid">
+            <h2>📘 Critical Things to Know Before You Start Trading</h2>
+            <div class="section-subhead">What I wish someone told me 6 years ago</div>
+            <div class="grid-3">
                 <div class="card">
-                    <div class="badge">Speed</div>
-                    <h3>Instant Withdrawals</h3>
-                    <p>24/7 withdrawals — funds hit your account in seconds, not days. This is Exness's best feature.</p>
+                    <h3>1. Leverage Is a Double-Edged Sword</h3>
+                    <p>It amplifies gains AND losses. Most beginners use too much. I recommend 1:10 or 1:20 max for the first year.</p>
+                    <a href="/blog/leverage-explained/">Read more →</a>
                 </div>
                 <div class="card">
-                    <div class="badge">Cost</div>
-                    <h3>Tight Spreads</h3>
-                    <p>From 0.0 pips on Zero accounts. Low commissions. Transparent pricing.</p>
+                    <h3>2. Risk Management > Strategy</h3>
+                    <p>You can have a mediocre strategy and survive with good risk management. The opposite is not true.</p>
+                    <a href="/blog/risk-management/">Read more →</a>
                 </div>
                 <div class="card">
-                    <div class="badge">Trust</div>
-                    <h3>Top Regulation</h3>
-                    <p>Licensed by FCA (UK), CySEC (Cyprus), FSA (Seychelles), and others.</p>
+                    <h3>3. Demo Trading Is Not Optional</h3>
+                    <p>Trade a demo account for 2-3 months before using real money. Your future self will thank you.</p>
+                    <a href="/blog/demo-trading/">Read more →</a>
+                </div>
+                <div class="card">
+                    <h3>4. Most "Gurus" Are Faking It</h3>
+                    <p>If someone promises guaranteed profits, run. Real trading is boring and inconsistent.</p>
+                    <a href="/blog/trading-gurus/">Read more →</a>
+                </div>
+                <div class="card">
+                    <h3>5. Focus on 1-2 Pairs, Not 20</h3>
+                    <p>Master EUR/USD or GBP/USD before diversifying. Less is more.</p>
+                    <a href="/blog/choose-forex-pairs/">Read more →</a>
+                </div>
+                <div class="card">
+                    <h3>6. Trading Psychology Is Everything</h3>
+                    <p>Fear and greed will ruin good setups. Learn to detach emotionally.</p>
+                    <a href="/blog/trading-psychology/">Read more →</a>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="/blog/" class="btn-outline">View All Essential Guides →</a>
+            </div>
+        </section>
+
+        <!-- Checklist Style Section -->
+        <section class="section">
+            <h2>✅ The Pre-Trading Checklist</h2>
+            <div class="section-subhead">6 rules I follow after 6 years</div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="checklist-item">
+                    <h3>✓ Start with a demo account — no exceptions</h3>
+                    <p>2-3 months minimum. Prove you can be profitable before risking real money.</p>
+                </div>
+                <div class="checklist-item">
+                    <h3>✓ Risk 1-2% per trade maximum</h3>
+                    <p>This is the golden rule. Break it and you will blow your account eventually.</p>
+                </div>
+                <div class="checklist-item">
+                    <h3>✓ Low leverage saves lives</h3>
+                    <p>1:10 or 1:20 for beginners. Ignore brokers offering 1:1000 — that's how they profit from your losses.</p>
+                </div>
+                <div class="checklist-item">
+                    <h3>✓ Have a trading plan before you enter</h3>
+                    <p>Entry, stop loss, take profit, position size. Write it down. Stick to it.</p>
+                </div>
+                <div class="checklist-item">
+                    <h3>✓ Journal every trade</h3>
+                    <p>You can't improve what you don't measure. Track your wins and losses.</p>
+                </div>
+                <div class="checklist-item">
+                    <h3>✓ Stop loss = survival. Always use it.</h3>
+                    <p>Every trade. No exceptions. Even when you're "sure" it will reverse.</p>
                 </div>
             </div>
         </section>
 
+        <!-- Free Tools Section -->
         <section class="section">
-            <h2>Latest from the Blog</h2>
-            <div class="grid">
+            <h2>🔧 Free Trading Tools (Coming Soon)</h2>
+            <div class="section-subhead">Built by a trader, for traders — 100% free, no catch</div>
+            <div class="grid-3">
                 <div class="card">
-                    <h3>📘 How to Open an Exness Account</h3>
-                    <p>Step-by-step guide for beginners. From registration to first deposit.</p>
-                    <a href="https://blog.structuretradelab.com/how-to-open-exness-account">Read more →</a>
+                    <div class="tool-icon">📐</div>
+                    <h3>Position Size Calculator</h3>
+                    <p>Calculate exact lot sizes based on account balance, risk percentage, and stop loss distance.</p>
+                    <p style="font-size: 0.8rem; color: #00b4d8; margin-top: 10px;">Launching soon</p>
                 </div>
                 <div class="card">
-                    <h3>⚖️ What Is Leverage? A Beginner's Guide</h3>
-                    <p>How leverage works, the risks, and how to use it responsibly.</p>
-                    <a href="https://blog.structuretradelab.com/leverage-explained">Read more →</a>
+                    <div class="tool-icon">📓</div>
+                    <h3>Trading Journal</h3>
+                    <p>Track every trade, analyze performance, identify patterns in your winning and losing trades.</p>
+                    <p style="font-size: 0.8rem; color: #00b4d8; margin-top: 10px;">Launching soon</p>
                 </div>
                 <div class="card">
-                    <h3>📊 Exness vs. Other Brokers</h3>
-                    <p>Comparing spreads, execution, and withdrawal speeds across top brokers.</p>
-                    <a href="https://blog.structuretradelab.com/exness-vs-others">Read more →</a>
+                    <div class="tool-icon">⚠️</div>
+                    <h3>Risk Calculator</h3>
+                    <p>Determine optimal position size based on your account size and risk tolerance.</p>
+                    <p style="font-size: 0.8rem; color: #00b4d8; margin-top: 10px;">Launching soon</p>
                 </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="/tools/" class="btn-outline">Get Notified When Tools Launch →</a>
             </div>
         </section>
 
+        <!-- About the Trader Section -->
         <section class="section">
-            <h2>Meet the Trader Behind This Lab</h2>
-            <div class="card" style="max-width: 700px; margin: 0 auto; text-align: center;">
-                <p>I've been trading forex for over 6 years. I've made mistakes, learned hard lessons, and developed a systematic approach to market structure.</p>
-                <p style="margin-top: 15px;">I'm not a guru. I don't sell courses. I just share what works — and help you find the right broker to execute your strategy.</p>
-                <p style="margin-top: 20px; font-weight: bold;">Ready to start your trading journey?</p>
-                <a href="https://one.exnessonelink.com/a/uj0rc71m" class="btn" style="margin-top: 15px;" target="_blank">Open Exness Account →</a>
+            <h2>About the Trader Behind This Lab</h2>
+            <div class="about-box">
+                <p>I've been trading forex for over 6 years. I started like everyone else — confused, excited, and losing money. I've made the classic mistakes: over-leveraging, revenge trading, chasing losses, and trusting fake gurus.</p>
+                <p>Over time, I developed a systematic approach based on market structure and strict risk management. I stopped trying to get rich quick and started trading with structure.</p>
+                <p>This site is where I share what actually works — no hype, no courses, no get-rich-quick promises. Just honest education from someone who's been in the trenches.</p>
+                <p style="font-weight: bold; margin-top: 20px;">— A trader who learned the hard way so you don't have to.</p>
             </div>
         </section>
     </div>
 
     <footer>
-    <div class="container">
-        <hr style="margin-bottom: 20px; border-color: #e0e0e0;">
-        <p style="font-size: 0.8rem; color: #6c757d; text-align: center;">
-            <strong>Disclosure:</strong> Structure Trade Lab is an independent brand and is not owned or operated by Exness. 
-            We participate in the Exness Introducing Broker (IB) program and may earn a commission when you open an account 
-            through our links. This does not affect your trading conditions or costs.
-        </p>
-        <p style="font-size: 0.75rem; color: #6c757d; text-align: center; margin-top: 10px;">
-            <strong>Risk Warning:</strong> CFDs are complex products. Trading is risky and may not be suitable for everyone. 
-            Past performance does not guarantee future results. You should carefully consider your financial situation before trading.
-        </p>
-        <p style="margin-top: 20px;">© 2026 Structure Trade Lab. All rights reserved.</p>
-    </div>
-  </footer>
-    
+        <div class="container">
+            <div class="footer-disclosure">
+                <strong>Disclosure:</strong> Structure Trade Lab is an independent educational website. I may participate in affiliate programs and earn commissions when you trade through links on this site. This does not affect your trading conditions or costs. I only recommend brokers I personally use and trust.
+            </div>
+            <div class="footer-disclosure">
+                <strong>Risk Warning:</strong> Trading forex and CFDs carries a high level of risk. Past performance does not guarantee future results. The information on this site is for educational purposes only and should not be considered financial advice. Only trade with money you can afford to lose.
+            </div>
+            <p>© 2026 Structure Trade Lab. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="https://structuretradelab.com">Home</a> | 
+                <a href="https://blog.structuretradelab.com/">Blog</a> | 
+                <a href="https://tools.structuretradelab.com">Tools</a> | 
+                <a href="https://structuretradelab.com/about">About</a> | 
+                <a href="https://structuretradelab.com/broker-setup/">Broker Setup</a>
+            </p>
+        </div>
+    </footer>
 </body>
 </html>
