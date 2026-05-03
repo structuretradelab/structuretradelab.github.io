@@ -196,3 +196,6 @@ footer a:hover {
     nav a { margin: 0 12px; font-size: 0.85rem; }
     .checklist-item { padding: 15px; }
 }
+.current {
+    color: #00b4d8;
+}
