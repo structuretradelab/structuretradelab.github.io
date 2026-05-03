@@ -154,7 +154,7 @@
             <div class="footer-disclosure">
                 <strong>Risk Warning:</strong> Trading forex and CFDs carries a high level of risk. Past performance does not guarantee future results. The information on this site is for educational purposes only and should not be considered financial advice. Only trade with money you can afford to lose.
             </div>
-            <p>© 2026 Structure Trade Lab. All rights reserved.</p>
+            <p>© <span id="current-year"></span> Structure Trade Lab. All rights reserved.</p>
             <p style="margin-top: 10px;">
                 <a href="https://structuretradelab.com">Home</a> | 
                 <a href="https://blog.structuretradelab.com">Blog</a> | 
@@ -164,5 +164,9 @@
             </p>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
