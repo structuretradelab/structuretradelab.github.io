@@ -36,10 +36,6 @@ header {
     font-size: 0.8rem;
     color: #a0c4e2;
 }
-.logo a {
-    color: white;
-    text-decoration: none;
-}
 nav a {
     color: white;
     text-decoration: none;
@@ -50,172 +46,80 @@ nav a {
 nav a:hover {
     color: #00b4d8;
 }
-.page-header {
+.hero {
     background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%);
     color: white;
-    padding: 50px 0;
+    padding: 80px 0;
     text-align: center;
 }
-.page-header h1 {
+.hero h2 {
     font-size: 2.5rem;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    line-height: 1.3;
 }
-.page-header p {
-    font-size: 1.1rem;
-    max-width: 600px;
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
     margin: 0 auto;
     color: #cce4f0;
 }
-.categories-section {
-    padding: 40px 0;
-    background: white;
+.section {
+    padding: 60px 0;
     border-bottom: 1px solid #e0e0e0;
 }
-.section-title {
-    text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-    color: #0a2540;
+.section:last-of-type {
+    border-bottom: none;
 }
-.category-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-}
-.category-card {
-    background: #f0f4f8;
-    border-radius: 50px;
-    padding: 10px 24px;
-    text-decoration: none;
-    color: #0a2540;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: all 0.2s;
-    border: 1px solid #dce4ec;
-}
-.category-card:hover {
-    background: #00b4d8;
-    color: white;
-    border-color: #00b4d8;
-    transform: translateY(-2px);
-}
-.category-card.essential {
-    background: #0a2540;
-    color: white;
-    border-color: #0a2540;
-}
-.category-card.essential:hover {
-    background: #00b4d8;
-    border-color: #00b4d8;
-}
-.latest-section {
-    padding: 50px 0;
-    background: #f8f9fa;
-}
-.posts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 30px;
-    margin-top: 20px;
-}
-.post-card {
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    transition: transform 0.2s, box-shadow 0.2s;
-    border: 1px solid #e0e0e0;
-}
-.post-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
-}
-.post-content {
-    padding: 24px;
-}
-.post-category {
-    display: inline-block;
-    background: #e9f0f5;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: #0a2540;
-    margin-bottom: 12px;
-}
-.post-category.essential-cat {
-    background: #0a2540;
-    color: white;
-}
-.post-title {
-    font-size: 1.25rem;
-    margin-bottom: 12px;
-    line-height: 1.4;
-}
-.post-title a {
-    color: #0a2540;
-    text-decoration: none;
-}
-.post-title a:hover {
-    color: #00b4d8;
-}
-.post-excerpt {
-    color: #4a5568;
-    font-size: 0.9rem;
+.section h2 {
+    font-size: 2rem;
     margin-bottom: 15px;
+    text-align: center;
+    color: #0a2540;
 }
-.post-meta {
-    font-size: 0.75rem;
-    color: #8e9eae;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #eef2f6;
-    padding-top: 12px;
-    margin-top: 8px;
-}
-.read-more {
-    color: #00b4d8;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.85rem;
-}
-.read-more:hover {
-    text-decoration: underline;
-}
-.featured-section {
-    padding: 50px 0;
-    background: white;
-    border-bottom: 1px solid #e0e0e0;
-}
-.featured-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-.featured-item {
-    background: #f8f9fa;
-    border-radius: 12px;
-    padding: 20px;
-    border-left: 4px solid #00b4d8;
-}
-.featured-item h3 {
-    margin-bottom: 10px;
+.section-subhead {
+    text-align: center;
+    color: #6c757d;
+    margin-bottom: 40px;
     font-size: 1.1rem;
 }
-.featured-item p {
-    color: #4a5568;
-    font-size: 0.85rem;
-    margin-bottom: 12px;
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
-.sidebar-category {
-    font-size: 0.7rem;
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid #e0e0e0;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.card h3 {
+    margin-bottom: 12px;
+    color: #0a2540;
+    font-size: 1.2rem;
+}
+.card p {
+    color: #4a5568;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+.card a {
     color: #00b4d8;
-    font-weight: 600;
-    margin-bottom: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.card a:hover {
+    text-decoration: underline;
+}
+.tool-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
 }
 .btn-outline {
     display: inline-block;
@@ -233,9 +137,37 @@ nav a:hover {
     background: #00b4d8;
     color: #0a2540;
 }
-.view-all {
+.checklist-item {
+    background: white;
+    margin: 15px 0;
+    padding: 20px 25px;
+    border-radius: 12px;
+    border-left: 4px solid #00b4d8;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    transition: transform 0.2s;
+}
+.checklist-item:hover {
+    transform: translateX(5px);
+}
+.checklist-item h3 {
+    margin-bottom: 8px;
+    color: #0a2540;
+}
+.checklist-item p {
+    color: #4a5568;
+}
+.about-box {
+    background: white;
+    padding: 35px;
+    border-radius: 16px;
+    max-width: 800px;
+    margin: 0 auto;
     text-align: center;
-    margin-top: 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.about-box p {
+    margin-bottom: 15px;
+    color: #4a5568;
 }
 footer {
     background: #0a2540;
@@ -258,9 +190,9 @@ footer a:hover {
     text-decoration: underline;
 }
 @media (max-width: 768px) {
-    .page-header h1 { font-size: 1.8rem; }
-    .section-title { font-size: 1.5rem; }
-    .posts-grid { grid-template-columns: 1fr; }
+    .hero h2 { font-size: 1.8rem; }
+    .section h2 { font-size: 1.5rem; }
     .header-flex { flex-direction: column; gap: 15px; }
     nav a { margin: 0 12px; font-size: 0.85rem; }
+    .checklist-item { padding: 15px; }
 }
