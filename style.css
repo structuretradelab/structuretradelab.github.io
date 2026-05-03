@@ -37,7 +37,7 @@ header {
     color: #a0c4e2;
 }
 nav a {
-    color: red;
+    color: white;
     text-decoration: none;
     margin-left: 25px;
     font-size: 0.9rem;
@@ -195,7 +195,4 @@ footer a:hover {
     .header-flex { flex-direction: column; gap: 15px; }
     nav a { margin: 0 12px; font-size: 0.85rem; }
     .checklist-item { padding: 15px; }
-}
-.nav-link {
-    color: red;
 }
