@@ -1093,3 +1093,234 @@ footer a:hover {
         position: static;
     }
 }
+
+
+/* ===== BLOG HERO SECTION ===== */
+.blog-hero {
+    background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.blog-hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.blog-hero p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #cce4f0;
+}
+
+/* ===== BLOG SOFT CTA ===== */
+.blog-cta {
+    background: #e8f4f8;
+    text-align: center;
+    padding: 40px;
+    border-radius: 16px;
+    margin: 50px 0;
+}
+
+.blog-cta h3 {
+    color: #0a2540;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.blog-cta p {
+    color: #4a5568;
+    margin-bottom: 20px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blog-cta .btn {
+    display: inline-block;
+    background: #00b4d8;
+    color: #0a2540;
+    padding: 12px 28px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+
+.blog-cta .btn:hover {
+    background: #0096b8;
+    transform: translateY(-2px);
+}
+
+.blog-cta .disclosure-small {
+    font-size: 0.7rem;
+    color: #6c757d;
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .blog-hero h1 {
+        font-size: 1.6rem;
+    }
+    
+    .blog-hero p {
+        font-size: 1rem;
+    }
+    
+    .blog-cta {
+        padding: 25px;
+    }
+    
+    .blog-cta h3 {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* ===== BROKER SETUP PAGE ===== */
+.broker-setup-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: white;
+}
+
+.broker-intro {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.pros-cons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.pros-box, .cons-box {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 16px;
+}
+
+.pros-box h3 {
+    color: #0a2540;
+    margin-bottom: 15px;
+}
+
+.cons-box h3 {
+    color: #0a2540;
+    margin-bottom: 15px;
+}
+
+.pros-box ul, .cons-box ul {
+    margin-left: 20px;
+    color: #4a5568;
+}
+
+.pros-box li, .cons-box li {
+    margin-bottom: 10px;
+}
+
+.spreads-section, .withdrawal-section, .regulation-section, .experience-section {
+    margin: 40px 0;
+}
+
+.spreads-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.spreads-table th, .spreads-table td {
+    border: 1px solid #e0e0e0;
+    padding: 12px;
+    text-align: left;
+}
+
+.spreads-table th {
+    background: #0a2540;
+    color: white;
+}
+
+.spreads-table tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.final-cta {
+    background: #0a2540;
+    color: white;
+    padding: 40px;
+    border-radius: 16px;
+    text-align: center;
+    margin: 50px 0 30px;
+}
+
+.final-cta h2 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.final-cta p {
+    color: #cce4f0;
+    margin-bottom: 20px;
+}
+
+.final-cta ul {
+    display: inline-block;
+    text-align: left;
+    margin: 20px auto;
+    color: #cce4f0;
+}
+
+.final-cta li {
+    margin-bottom: 8px;
+}
+
+.final-cta .btn {
+    display: inline-block;
+    background: #00b4d8;
+    color: #0a2540;
+    padding: 14px 32px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    margin: 20px 0;
+    transition: all 0.3s;
+}
+
+.final-cta .btn:hover {
+    background: #0096b8;
+    transform: translateY(-2px);
+}
+
+.final-cta .disclosure-full, .final-cta .risk-warning {
+    font-size: 0.7rem;
+    color: #a0c4e2;
+    margin-top: 15px;
+}
+
+.disclaimer-small {
+    font-size: 0.7rem;
+    color: #6c757d;
+}
+
+@media (max-width: 700px) {
+    .pros-cons-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .final-cta {
+        padding: 25px;
+    }
+    
+    .spreads-table th, .spreads-table td {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+}
