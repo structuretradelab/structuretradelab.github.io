@@ -1,0 +1,337 @@
+/* ============================================
+   CATEGORY.CSS - For ALL Category Pages
+   ============================================
+   Works for:
+   - /category/getting-started/
+   - /category/leverage-&-margin/
+   - /category/risk-management/
+   - /category/position-sizing/
+   - /category/trading-psychology/
+   - /category/strategy-&-analysis/
+   - /category/common-mistakes/
+   - /category/tools-&-resources/
+   ============================================ */
+
+/* ----- PAGE HEADER ----- */
+.page-header {
+    background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%);
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.page-header p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #cce4f0;
+}
+
+/* ============================================
+   CATEGORY POSTS CONTAINER (2-column layout)
+   ============================================ */
+.category-posts-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+}
+
+/* ----- POSTS LIST (Left column) ----- */
+.category-posts-list {
+    background: transparent;
+}
+
+/* Individual Post Item */
+.category-post-item {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid #e0e0e0;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.category-post-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Post Meta (date, read time) */
+.category-post-meta {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 12px;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.post-date, .post-read-time {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Post Title */
+.category-post-item h2 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.category-post-item h2 a {
+    color: #0a2540;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.category-post-item h2 a:hover {
+    color: #00b4d8;
+    text-decoration: underline;
+}
+
+/* Post Excerpt */
+.category-post-item p {
+    color: #4a5568;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Read More Link */
+.category-post-item .read-more {
+    color: #00b4d8;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-block;
+    transition: all 0.2s;
+}
+
+.category-post-item .read-more:hover {
+    color: #0096b8;
+    text-decoration: underline;
+}
+
+/* Empty state (no posts yet) */
+.category-empty {
+    background: white;
+    border-radius: 16px;
+    padding: 60px 40px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+.category-empty h2 {
+    color: #0a2540;
+    margin-bottom: 15px;
+}
+
+.category-empty p {
+    color: #4a5568;
+    margin-bottom: 20px;
+}
+
+/* ============================================
+   SIDEBAR (Right column)
+   ============================================ */
+.category-sidebar {
+    position: sticky;
+    top: 100px;
+    align-self: start;
+}
+
+/* Sidebar Widget */
+.sidebar-widget {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 1px solid #e0e0e0;
+}
+
+.sidebar-widget h3 {
+    color: #0a2540;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #00b4d8;
+    display: inline-block;
+}
+
+/* Sidebar Lists */
+.sidebar-categories-list,
+.sidebar-essentials-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-categories-list li,
+.sidebar-essentials-list li {
+    margin-bottom: 10px;
+}
+
+.sidebar-categories-list a,
+.sidebar-essentials-list a {
+    color: #4a5568;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: block;
+    padding: 6px 0;
+    transition: color 0.2s;
+}
+
+.sidebar-categories-list a:hover,
+.sidebar-essentials-list a:hover {
+    color: #00b4d8;
+}
+
+.sidebar-categories-list a.active {
+    color: #00b4d8;
+    font-weight: bold;
+}
+
+/* ============================================
+   DARK MODE STYLES
+   ============================================ */
+body.dark-mode .page-header {
+    background: linear-gradient(135deg, #0a0f1a 0%, #0d1f2d 100%);
+}
+
+body.dark-mode .page-header p {
+    color: var(--dark-text-muted, #8b949e);
+}
+
+body.dark-mode .category-post-item {
+    background: var(--dark-bg-card, #121724);
+    border-color: var(--dark-border, #1f2a3a);
+}
+
+body.dark-mode .category-post-meta {
+    color: var(--dark-text-muted, #8b949e);
+}
+
+body.dark-mode .category-post-item h2 a {
+    color: #ffffff;
+}
+
+body.dark-mode .category-post-item h2 a:hover {
+    color: var(--dark-link, #58c4dd);
+}
+
+body.dark-mode .category-post-item p {
+    color: var(--dark-text-secondary, #c9d1d9);
+}
+
+body.dark-mode .category-post-item .read-more {
+    color: var(--dark-link, #58c4dd);
+}
+
+body.dark-mode .category-post-item .read-more:hover {
+    color: var(--dark-link-hover, #7cd4e8);
+}
+
+body.dark-mode .category-empty {
+    background: var(--dark-bg-card, #121724);
+    border-color: var(--dark-border, #1f2a3a);
+}
+
+body.dark-mode .category-empty h2 {
+    color: var(--dark-text-primary, #f0f3f8);
+}
+
+body.dark-mode .category-empty p {
+    color: var(--dark-text-secondary, #c9d1d9);
+}
+
+body.dark-mode .sidebar-widget {
+    background: var(--dark-bg-card, #121724);
+    border-color: var(--dark-border, #1f2a3a);
+}
+
+body.dark-mode .sidebar-widget h3 {
+    color: var(--dark-text-primary, #f0f3f8);
+    border-bottom-color: var(--dark-link, #58c4dd);
+}
+
+body.dark-mode .sidebar-categories-list a,
+body.dark-mode .sidebar-essentials-list a {
+    color: var(--dark-text-secondary, #c9d1d9);
+}
+
+body.dark-mode .sidebar-categories-list a:hover,
+body.dark-mode .sidebar-essentials-list a:hover {
+    color: var(--dark-link, #58c4dd);
+}
+
+body.dark-mode .sidebar-categories-list a.active {
+    color: var(--dark-link, #58c4dd);
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+@media (max-width: 768px) {
+    .page-header {
+        padding: 40px 0;
+    }
+    
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .page-header p {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+    
+    .category-posts-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 30px 15px;
+    }
+    
+    .category-sidebar {
+        position: static;
+    }
+    
+    .sidebar-widget {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 700px) {
+    .category-post-item {
+        padding: 20px;
+    }
+    
+    .category-post-item h2 {
+        font-size: 1.2rem;
+    }
+    
+    .category-post-meta {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header {
+        padding: 30px 0;
+    }
+    
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .category-post-item {
+        padding: 15px;
+    }
+}
