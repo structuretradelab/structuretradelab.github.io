@@ -1,0 +1,162 @@
+/* ============================================
+   TOOLS.CSS - Tools Page Only
+   ============================================
+   For: tools.structuretradelab.com
+   ============================================ */
+
+.tools-hero {
+    background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.tools-hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.tools-hero p {
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #cce4f0;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin: 50px 0;
+}
+
+.tool-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: 1px solid #e0e0e0;
+    display: block;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.1);
+    border-color: #00b4d8;
+}
+
+.tool-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+}
+
+.tool-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #0a2540;
+}
+
+.tool-card p {
+    font-size: 0.85rem;
+    color: #4a5568;
+    line-height: 1.5;
+}
+
+.badge {
+    display: inline-block;
+    background: #e9f0f5;
+    font-size: 0.7rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    color: #0a2540;
+    margin-top: 12px;
+}
+
+.badge-platform {
+    display: inline-block;
+    background: #0a2540;
+    font-size: 0.65rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-top: 8px;
+    margin-left: 4px;
+    color: white;
+}
+
+.coming-note {
+    text-align: center;
+    margin: 40px 0 50px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 16px;
+    border-left: 4px solid #00b4d8;
+    font-size: 0.9rem;
+    color: #2c3e4e;
+}
+
+/* Dark Mode */
+body.dark-mode .tools-hero {
+    background: linear-gradient(135deg, #0a0f1a 0%, #0d1f2d 100%);
+}
+
+body.dark-mode .tools-hero p {
+    color: var(--dark-text-muted);
+}
+
+body.dark-mode .tool-card {
+    background: var(--dark-bg-card);
+    border-color: var(--dark-border);
+}
+
+body.dark-mode .tool-card h3 {
+    color: var(--dark-text-primary);
+}
+
+body.dark-mode .tool-card p {
+    color: var(--dark-text-secondary);
+}
+
+body.dark-mode .badge {
+    background: var(--dark-bg-elevated, #1a2332);
+    color: var(--dark-text-secondary);
+}
+
+body.dark-mode .badge-platform {
+    background: var(--dark-bg-elevated, #1a2332);
+    color: var(--dark-text-secondary);
+}
+
+body.dark-mode .coming-note {
+    background: var(--dark-bg-card);
+    border-left-color: var(--dark-link);
+    color: var(--dark-text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tools-hero h1 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .tools-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .tool-card {
+        padding: 20px;
+    }
+}

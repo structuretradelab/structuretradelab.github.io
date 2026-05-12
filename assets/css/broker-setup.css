@@ -1,0 +1,310 @@
+/* ============================================
+   BROKER-SETUP.CSS - Broker Setup Page Only
+   ============================================
+   For: structuretradelab.com/broker-setup/
+   ============================================ */
+
+.broker-setup-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: white;
+}
+
+.broker-intro {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.pros-cons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.pros-box,
+.cons-box {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 16px;
+}
+
+.pros-box h3 {
+    color: #0a2540;
+    margin-bottom: 15px;
+}
+
+.cons-box h3 {
+    color: #0a2540;
+    margin-bottom: 15px;
+}
+
+.pros-box ul,
+.cons-box ul {
+    margin-left: 20px;
+    color: #4a5568;
+}
+
+.pros-box li,
+.cons-box li {
+    margin-bottom: 10px;
+}
+
+.spreads-section {
+    margin: 40px 0;
+}
+
+.spreads-section h2 {
+    font-size: 1.6rem;
+    color: #0a2540;
+    margin-bottom: 20px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.spreads-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.spreads-table th,
+.spreads-table td {
+    border: 1px solid #e0e0e0;
+    padding: 12px;
+    text-align: left;
+}
+
+.spreads-table th {
+    background: #0a2540;
+    color: white;
+}
+
+.spreads-table tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.disclaimer-small {
+    font-size: 0.7rem;
+    color: #6c757d;
+    margin-top: 10px;
+}
+
+.withdrawal-section {
+    margin: 40px 0;
+}
+
+.withdrawal-section h2 {
+    font-size: 1.6rem;
+    color: #0a2540;
+    margin-bottom: 15px;
+}
+
+.regulation-section {
+    margin: 40px 0;
+}
+
+.regulation-section h2 {
+    font-size: 1.6rem;
+    color: #0a2540;
+    margin-bottom: 15px;
+}
+
+.regulation-section ul {
+    margin: 15px 0 15px 30px;
+    color: #4a5568;
+}
+
+.regulation-section li {
+    margin-bottom: 8px;
+}
+
+.experience-section {
+    margin: 40px 0;
+}
+
+.experience-section h2 {
+    font-size: 1.6rem;
+    color: #0a2540;
+    margin-bottom: 15px;
+}
+
+.final-cta {
+    background: #0a2540;
+    color: white;
+    padding: 40px;
+    border-radius: 16px;
+    text-align: center;
+    margin: 50px 0 30px;
+}
+
+.final-cta h2 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.final-cta p {
+    color: #cce4f0;
+    margin-bottom: 20px;
+}
+
+.final-cta ul {
+    display: inline-block;
+    text-align: left;
+    margin: 20px auto;
+    color: #cce4f0;
+}
+
+.final-cta li {
+    margin-bottom: 8px;
+}
+
+.final-cta .btn {
+    display: inline-block;
+    background: #00b4d8;
+    color: #0a2540;
+    padding: 14px 32px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    margin: 20px 0;
+    transition: all 0.3s;
+}
+
+.final-cta .btn:hover {
+    background: #0096b8;
+    transform: translateY(-2px);
+}
+
+.final-cta .disclosure-full,
+.final-cta .risk-warning {
+    font-size: 0.7rem;
+    color: #a0c4e2;
+    margin-top: 15px;
+}
+
+/* Dark Mode */
+body.dark-mode .broker-setup-container {
+    background: var(--dark-bg-primary);
+}
+
+body.dark-mode .broker-intro {
+    border-bottom-color: var(--dark-border);
+}
+
+body.dark-mode .pros-box,
+body.dark-mode .cons-box {
+    background: var(--dark-bg-card);
+}
+
+body.dark-mode .pros-box h3,
+body.dark-mode .cons-box h3 {
+    color: var(--dark-text-primary);
+}
+
+body.dark-mode .pros-box ul,
+body.dark-mode .cons-box ul {
+    color: var(--dark-text-secondary);
+}
+
+body.dark-mode .spreads-section h2,
+body.dark-mode .withdrawal-section h2,
+body.dark-mode .regulation-section h2,
+body.dark-mode .experience-section h2 {
+    color: var(--dark-text-primary);
+}
+
+body.dark-mode .spreads-table th,
+body.dark-mode .spreads-table td {
+    border-color: var(--dark-border);
+}
+
+body.dark-mode .spreads-table th {
+    background: var(--dark-bg-primary);
+    color: var(--dark-text-primary);
+}
+
+body.dark-mode .spreads-table td {
+    background: var(--dark-bg-card);
+    color: var(--dark-text-secondary);
+}
+
+body.dark-mode .spreads-table tr:nth-child(even) td {
+    background: var(--dark-bg-elevated, #1a2332);
+}
+
+body.dark-mode .disclaimer-small {
+    color: var(--dark-text-muted);
+}
+
+body.dark-mode .regulation-section ul {
+    color: var(--dark-text-secondary);
+}
+
+body.dark-mode .final-cta {
+    background: var(--dark-bg-primary);
+}
+
+body.dark-mode .final-cta p {
+    color: var(--dark-text-muted);
+}
+
+body.dark-mode .final-cta ul {
+    color: var(--dark-text-muted);
+}
+
+body.dark-mode .final-cta .btn {
+    background: var(--dark-link);
+    color: #0a0f1a;
+}
+
+body.dark-mode .final-cta .btn:hover {
+    background: var(--dark-link-hover);
+}
+
+body.dark-mode .final-cta .disclosure-full,
+body.dark-mode .final-cta .risk-warning {
+    color: var(--dark-text-muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pros-cons-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .final-cta {
+        padding: 25px;
+    }
+    
+    .final-cta h2 {
+        font-size: 1.2rem;
+    }
+    
+    .spreads-table th,
+    .spreads-table td {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+    
+    .broker-setup-container {
+        padding: 25px 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .table-responsive {
+        overflow-x: auto;
+    }
+    
+    .spreads-table {
+        min-width: 500px;
+    }
+}
