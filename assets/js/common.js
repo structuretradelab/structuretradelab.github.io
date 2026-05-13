@@ -10,36 +10,35 @@
 
     // ============================================
     // DARK MODE FUNCTIONALITY
+    // Uses document.documentElement (html tag) to prevent flash
     // ============================================
     (function() {
         const darkModeToggle = document.getElementById('darkModeToggle');
         const toggleIcon = darkModeToggle ? darkModeToggle.querySelector('.toggle-icon') : null;
         const toggleText = darkModeToggle ? darkModeToggle.querySelector('.toggle-text') : null;
 
-        // Check for saved preference
+        // Check for saved preference (already applied in head, but sync toggle state)
         const savedTheme = localStorage.getItem('theme');
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        // Set initial theme
-        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-            document.body.classList.add('dark-mode');
+        
+        // Set toggle button state based on current theme
+        if (document.documentElement.classList.contains('dark-mode')) {
             if (toggleIcon) toggleIcon.textContent = '☀️';
             if (toggleText) toggleText.textContent = 'Light';
         } else {
-            document.body.classList.remove('dark-mode');
             if (toggleIcon) toggleIcon.textContent = '🌙';
             if (toggleText) toggleText.textContent = 'Dark';
         }
 
         // Toggle function
         window.toggleDarkMode = function() {
-            if (document.body.classList.contains('dark-mode')) {
-                document.body.classList.remove('dark-mode');
+            if (document.documentElement.classList.contains('dark-mode')) {
+                document.documentElement.classList.remove('dark-mode');
                 localStorage.setItem('theme', 'light');
                 if (toggleIcon) toggleIcon.textContent = '🌙';
                 if (toggleText) toggleText.textContent = 'Dark';
             } else {
-                document.body.classList.add('dark-mode');
+                document.documentElement.classList.add('dark-mode');
                 localStorage.setItem('theme', 'dark');
                 if (toggleIcon) toggleIcon.textContent = '☀️';
                 if (toggleText) toggleText.textContent = 'Light';
@@ -55,11 +54,11 @@
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
             if (!localStorage.getItem('theme')) {
                 if (e.matches) {
-                    document.body.classList.add('dark-mode');
+                    document.documentElement.classList.add('dark-mode');
                     if (toggleIcon) toggleIcon.textContent = '☀️';
                     if (toggleText) toggleText.textContent = 'Light';
                 } else {
-                    document.body.classList.remove('dark-mode');
+                    document.documentElement.classList.remove('dark-mode');
                     if (toggleIcon) toggleIcon.textContent = '🌙';
                     if (toggleText) toggleText.textContent = 'Dark';
                 }
@@ -177,7 +176,7 @@
     })();
 
     // ============================================
-    // GOOGLE ANALYTICS INJECTION
+    // GOOGLE ANALYTICS INJECTION (only if not already loaded)
     // ============================================
     (function() {
         // Check if GA already exists
