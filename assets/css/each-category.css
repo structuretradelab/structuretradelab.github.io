@@ -12,7 +12,7 @@
    - /category/tools-&-resources/
    ============================================ */
 
-/* ----- LIGHT MODE ----- */
+/* ----- PAGE HEADER ----- */
 .page-header {
     background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%);
     color: white;
@@ -33,6 +33,9 @@
     color: #cce4f0;
 }
 
+/* ============================================
+   CATEGORY POSTS CONTAINER (2-column layout)
+   ============================================ */
 .category-posts-container {
     max-width: 1100px;
     margin: 0 auto;
@@ -42,10 +45,12 @@
     gap: 40px;
 }
 
+/* ----- POSTS LIST (Left column) ----- */
 .category-posts-list {
     background: transparent;
 }
 
+/* Individual Post Item */
 .category-post-item {
     background: white;
     border-radius: 16px;
@@ -60,6 +65,7 @@
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
 }
 
+/* Post Meta (date, read time) */
 .category-post-meta {
     display: flex;
     gap: 15px;
@@ -74,6 +80,7 @@
     gap: 4px;
 }
 
+/* Post Title */
 .category-post-item h2 {
     font-size: 1.4rem;
     margin-bottom: 12px;
@@ -90,18 +97,21 @@
     text-decoration: underline;
 }
 
+/* Post Excerpt */
 .category-post-item p {
     color: #4a5568;
     margin-bottom: 15px;
     line-height: 1.6;
 }
 
+/* Read More Link */
 .category-post-item .read-more {
     color: #00b4d8;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9rem;
     display: inline-block;
+    transition: all 0.2s;
 }
 
 .category-post-item .read-more:hover {
@@ -109,6 +119,7 @@
     text-decoration: underline;
 }
 
+/* Empty state (no posts yet) */
 .category-empty {
     background: white;
     border-radius: 16px;
@@ -127,30 +138,16 @@
     margin-bottom: 20px;
 }
 
-.category-empty .btn-outline {
-    display: inline-block;
-    border: 2px solid #00b4d8;
-    color: #0a2540;
-    padding: 10px 26px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s;
-    background: transparent;
-}
-
-.category-empty .btn-outline:hover {
-    background: #00b4d8;
-    color: #0a2540;
-    transform: translateY(-2px);
-}
-
+/* ============================================
+   SIDEBAR (Right column)
+   ============================================ */
 .category-sidebar {
     position: sticky;
     top: 100px;
     align-self: start;
 }
 
+/* Sidebar Widget */
 .sidebar-widget {
     background: white;
     border-radius: 16px;
@@ -168,6 +165,7 @@
     display: inline-block;
 }
 
+/* Sidebar Lists */
 .sidebar-categories-list,
 .sidebar-essentials-list {
     list-style: none;
@@ -200,97 +198,110 @@
     font-weight: bold;
 }
 
-/* ----- DARK MODE ----- */
+/* ============================================
+   DARK MODE STYLES
+   ============================================ */
 html.dark-mode .page-header {
     background: linear-gradient(135deg, #0a0f1a 0%, #0d1f2d 100%);
 }
 
 html.dark-mode .page-header p {
-    color: var(--dark-text-muted);
+    color: var(--dark-text-muted, #8b949e);
 }
 
 html.dark-mode .category-post-item {
-    background: var(--dark-bg-card);
-    border-color: var(--dark-border);
+    background: var(--dark-bg-card, #121724);
+    border-color: var(--dark-border, #1f2a3a);
 }
 
 html.dark-mode .category-post-meta {
-    color: var(--dark-text-muted);
+    color: var(--dark-text-muted, #8b949e);
 }
 
 html.dark-mode .category-post-item h2 a {
-    color: var(--dark-text-primary);
+    color: #ffffff;
 }
 
 html.dark-mode .category-post-item h2 a:hover {
-    color: var(--dark-link);
+    color: var(--dark-link, #58c4dd);
 }
 
 html.dark-mode .category-post-item p {
-    color: var(--dark-text-secondary);
+    color: var(--dark-text-secondary, #c9d1d9);
 }
 
 html.dark-mode .category-post-item .read-more {
-    color: var(--dark-link);
+    color: var(--dark-link, #58c4dd);
+}
+
+html.dark-mode .category-post-item .read-more:hover {
+    color: var(--dark-link-hover, #7cd4e8);
 }
 
 html.dark-mode .category-empty {
-    background: var(--dark-bg-card);
-    border-color: var(--dark-border);
+    background: var(--dark-bg-card, #121724);
+    border-color: var(--dark-border, #1f2a3a);
 }
 
 html.dark-mode .category-empty h2 {
-    color: var(--dark-text-primary);
+    color: var(--dark-text-primary, #f0f3f8);
 }
 
 html.dark-mode .category-empty p {
-    color: var(--dark-text-secondary);
+    color: var(--dark-text-secondary, #c9d1d9);
 }
 
 html.dark-mode .sidebar-widget {
-    background: var(--dark-bg-card);
-    border-color: var(--dark-border);
+    background: var(--dark-bg-card, #121724);
+    border-color: var(--dark-border, #1f2a3a);
 }
 
 html.dark-mode .sidebar-widget h3 {
-    color: var(--dark-text-primary);
-    border-bottom-color: var(--dark-link);
+    color: var(--dark-text-primary, #f0f3f8);
+    border-bottom-color: var(--dark-link, #58c4dd);
 }
 
 html.dark-mode .sidebar-categories-list a,
 html.dark-mode .sidebar-essentials-list a {
-    color: var(--dark-text-secondary);
+    color: var(--dark-text-secondary, #c9d1d9);
 }
 
 html.dark-mode .sidebar-categories-list a:hover,
 html.dark-mode .sidebar-essentials-list a:hover {
-    color: var(--dark-link);
+    color: var(--dark-link, #58c4dd);
 }
 
 html.dark-mode .sidebar-categories-list a.active {
-    color: var(--dark-link);
+    color: var(--dark-link, #58c4dd);
 }
 
-/* ----- RESPONSIVE ----- */
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
 @media (max-width: 768px) {
     .page-header {
         padding: 40px 0;
     }
+    
     .page-header h1 {
         font-size: 1.8rem;
     }
+    
     .page-header p {
         font-size: 1rem;
         padding: 0 15px;
     }
+    
     .category-posts-container {
         grid-template-columns: 1fr;
         gap: 30px;
         padding: 30px 15px;
     }
+    
     .category-sidebar {
         position: static;
     }
+    
     .sidebar-widget {
         margin-bottom: 20px;
     }
@@ -300,9 +311,11 @@ html.dark-mode .sidebar-categories-list a.active {
     .category-post-item {
         padding: 20px;
     }
+    
     .category-post-item h2 {
         font-size: 1.2rem;
     }
+    
     .category-post-meta {
         flex-direction: column;
         gap: 5px;
@@ -313,9 +326,11 @@ html.dark-mode .sidebar-categories-list a.active {
     .page-header {
         padding: 30px 0;
     }
+    
     .page-header h1 {
         font-size: 1.5rem;
     }
+    
     .category-post-item {
         padding: 15px;
     }

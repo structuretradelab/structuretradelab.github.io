@@ -4,7 +4,6 @@
    For: tools.structuretradelab.com
    ============================================ */
 
-/* ----- LIGHT MODE ----- */
 .tools-hero {
     background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%);
     color: white;
@@ -99,7 +98,7 @@
     color: #2c3e4e;
 }
 
-/* ----- DARK MODE ----- */
+/* Dark Mode */
 html.dark-mode .tools-hero {
     background: linear-gradient(135deg, #0a0f1a 0%, #0d1f2d 100%);
 }
@@ -121,9 +120,13 @@ html.dark-mode .tool-card p {
     color: var(--dark-text-secondary);
 }
 
-html.dark-mode .badge,
+html.dark-mode .badge {
+    background: var(--dark-bg-elevated, #1a2332);
+    color: var(--dark-text-secondary);
+}
+
 html.dark-mode .badge-platform {
-    background: var(--dark-bg-elevated);
+    background: var(--dark-bg-elevated, #1a2332);
     color: var(--dark-text-secondary);
 }
 
@@ -133,7 +136,7 @@ html.dark-mode .coming-note {
     color: var(--dark-text-secondary);
 }
 
-/* ----- RESPONSIVE ----- */
+/* Responsive */
 @media (max-width: 1000px) {
     .tools-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -145,9 +148,6 @@ html.dark-mode .coming-note {
     .tools-hero h1 {
         font-size: 1.6rem;
     }
-    .tools-hero p {
-        font-size: 0.9rem;
-    }
 }
 
 @media (max-width: 700px) {
@@ -155,6 +155,7 @@ html.dark-mode .coming-note {
         grid-template-columns: 1fr;
         gap: 20px;
     }
+    
     .tool-card {
         padding: 20px;
     }

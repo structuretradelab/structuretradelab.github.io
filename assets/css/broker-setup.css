@@ -4,7 +4,6 @@
    For: structuretradelab.com/broker-setup/
    ============================================ */
 
-/* ----- LIGHT MODE ----- */
 .broker-setup-container {
     max-width: 800px;
     margin: 0 auto;
@@ -17,10 +16,6 @@
     margin-bottom: 30px;
     padding-bottom: 20px;
     border-bottom: 1px solid #e0e0e0;
-}
-
-.broker-intro p {
-    color: #2c3e4e;
 }
 
 .pros-cons-grid {
@@ -110,11 +105,6 @@
     margin-bottom: 15px;
 }
 
-.withdrawal-section p {
-    margin-bottom: 15px;
-    color: #2c3e4e;
-}
-
 .regulation-section {
     margin: 40px 0;
 }
@@ -123,11 +113,6 @@
     font-size: 1.6rem;
     color: #0a2540;
     margin-bottom: 15px;
-}
-
-.regulation-section p {
-    margin-bottom: 15px;
-    color: #2c3e4e;
 }
 
 .regulation-section ul {
@@ -147,11 +132,6 @@
     font-size: 1.6rem;
     color: #0a2540;
     margin-bottom: 15px;
-}
-
-.experience-section p {
-    margin-bottom: 15px;
-    color: #2c3e4e;
 }
 
 .final-cta {
@@ -209,17 +189,13 @@
     margin-top: 15px;
 }
 
-/* ----- DARK MODE ----- */
+/* Dark Mode */
 html.dark-mode .broker-setup-container {
     background: var(--dark-bg-primary);
 }
 
 html.dark-mode .broker-intro {
     border-bottom-color: var(--dark-border);
-}
-
-html.dark-mode .broker-intro p {
-    color: var(--dark-text-secondary);
 }
 
 html.dark-mode .pros-box,
@@ -260,17 +236,11 @@ html.dark-mode .spreads-table td {
 }
 
 html.dark-mode .spreads-table tr:nth-child(even) td {
-    background: var(--dark-bg-elevated);
+    background: var(--dark-bg-elevated, #1a2332);
 }
 
 html.dark-mode .disclaimer-small {
     color: var(--dark-text-muted);
-}
-
-html.dark-mode .withdrawal-section p,
-html.dark-mode .regulation-section p,
-html.dark-mode .experience-section p {
-    color: var(--dark-text-secondary);
 }
 
 html.dark-mode .regulation-section ul {
@@ -281,7 +251,10 @@ html.dark-mode .final-cta {
     background: var(--dark-bg-primary);
 }
 
-html.dark-mode .final-cta p,
+html.dark-mode .final-cta p {
+    color: var(--dark-text-muted);
+}
+
 html.dark-mode .final-cta ul {
     color: var(--dark-text-muted);
 }
@@ -300,25 +273,29 @@ html.dark-mode .final-cta .risk-warning {
     color: var(--dark-text-muted);
 }
 
-/* ----- RESPONSIVE ----- */
+/* Responsive */
 @media (max-width: 768px) {
     .pros-cons-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
+    
     .final-cta {
         padding: 25px;
     }
+    
     .final-cta h2 {
         font-size: 1.2rem;
     }
-    .broker-setup-container {
-        padding: 25px 15px;
-    }
+    
     .spreads-table th,
     .spreads-table td {
         padding: 8px;
         font-size: 0.8rem;
+    }
+    
+    .broker-setup-container {
+        padding: 25px 15px;
     }
 }
 
@@ -326,6 +303,7 @@ html.dark-mode .final-cta .risk-warning {
     .table-responsive {
         overflow-x: auto;
     }
+    
     .spreads-table {
         min-width: 500px;
     }

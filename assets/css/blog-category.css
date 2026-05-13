@@ -1,10 +1,9 @@
 /* ============================================
    CATEGORY.CSS - Category Pages Only
    ============================================
-   For: /category/   (all category pages)
+   For: blog.structuretradelab.com/category/
    ============================================ */
 
-/* ----- LIGHT MODE ----- */
 .page-header {
     background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%);
     color: white;
@@ -23,6 +22,59 @@
     max-width: 600px;
     margin: 0 auto;
     color: #cce4f0;
+}
+
+.all-categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.category-card-large {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: 1px solid #e0e0e0;
+    display: block;
+}
+
+.category-card-large:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    border-color: #00b4d8;
+}
+
+.category-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.category-card-large h3 {
+    color: #0a2540;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.category-card-large p {
+    color: #6c757d;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+}
+
+.category-count {
+    display: inline-block;
+    background: #e8f4f8;
+    color: #0a2540;
+    font-size: 0.7rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: bold;
 }
 
 .category-posts-container {
@@ -60,12 +112,6 @@
     color: #6c757d;
 }
 
-.post-date, .post-read-time {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-}
-
 .category-post-item h2 {
     font-size: 1.4rem;
     margin-bottom: 12px;
@@ -74,12 +120,10 @@
 .category-post-item h2 a {
     color: #0a2540;
     text-decoration: none;
-    font-weight: 600;
 }
 
 .category-post-item h2 a:hover {
     color: #00b4d8;
-    text-decoration: underline;
 }
 
 .category-post-item p {
@@ -93,30 +137,6 @@
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9rem;
-    display: inline-block;
-}
-
-.category-post-item .read-more:hover {
-    color: #0096b8;
-    text-decoration: underline;
-}
-
-.category-empty {
-    background: white;
-    border-radius: 16px;
-    padding: 60px 40px;
-    text-align: center;
-    border: 1px solid #e0e0e0;
-}
-
-.category-empty h2 {
-    color: #0a2540;
-    margin-bottom: 15px;
-}
-
-.category-empty p {
-    color: #4a5568;
-    margin-bottom: 20px;
 }
 
 .category-sidebar {
@@ -142,20 +162,17 @@
     display: inline-block;
 }
 
-.sidebar-categories-list,
-.sidebar-essentials-list {
+.sidebar-categories-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.sidebar-categories-list li,
-.sidebar-essentials-list li {
+.sidebar-categories-list li {
     margin-bottom: 10px;
 }
 
-.sidebar-categories-list a,
-.sidebar-essentials-list a {
+.sidebar-categories-list a {
     color: #4a5568;
     text-decoration: none;
     font-size: 0.9rem;
@@ -164,23 +181,35 @@
     transition: color 0.2s;
 }
 
-.sidebar-categories-list a:hover,
-.sidebar-essentials-list a:hover {
+.sidebar-categories-list a:hover {
     color: #00b4d8;
 }
 
-.sidebar-categories-list a.active {
-    color: #00b4d8;
-    font-weight: bold;
-}
-
-/* ----- DARK MODE ----- */
+/* Dark Mode */
 html.dark-mode .page-header {
     background: linear-gradient(135deg, #0a0f1a 0%, #0d1f2d 100%);
 }
 
 html.dark-mode .page-header p {
     color: var(--dark-text-muted);
+}
+
+html.dark-mode .category-card-large {
+    background: var(--dark-bg-card);
+    border-color: var(--dark-border);
+}
+
+html.dark-mode .category-card-large h3 {
+    color: var(--dark-text-primary);
+}
+
+html.dark-mode .category-card-large p {
+    color: var(--dark-text-secondary);
+}
+
+html.dark-mode .category-count {
+    background: var(--dark-bg-elevated, #1a2332);
+    color: var(--dark-text-secondary);
 }
 
 html.dark-mode .category-post-item {
@@ -193,7 +222,7 @@ html.dark-mode .category-post-meta {
 }
 
 html.dark-mode .category-post-item h2 a {
-    color: var(--dark-text-primary);
+    color: #ffffff;
 }
 
 html.dark-mode .category-post-item h2 a:hover {
@@ -208,19 +237,6 @@ html.dark-mode .category-post-item .read-more {
     color: var(--dark-link);
 }
 
-html.dark-mode .category-empty {
-    background: var(--dark-bg-card);
-    border-color: var(--dark-border);
-}
-
-html.dark-mode .category-empty h2 {
-    color: var(--dark-text-primary);
-}
-
-html.dark-mode .category-empty p {
-    color: var(--dark-text-secondary);
-}
-
 html.dark-mode .sidebar-widget {
     background: var(--dark-bg-card);
     border-color: var(--dark-border);
@@ -231,66 +247,41 @@ html.dark-mode .sidebar-widget h3 {
     border-bottom-color: var(--dark-link);
 }
 
-html.dark-mode .sidebar-categories-list a,
-html.dark-mode .sidebar-essentials-list a {
+html.dark-mode .sidebar-categories-list a {
     color: var(--dark-text-secondary);
 }
 
-html.dark-mode .sidebar-categories-list a:hover,
-html.dark-mode .sidebar-essentials-list a:hover {
+html.dark-mode .sidebar-categories-list a:hover {
     color: var(--dark-link);
 }
 
-html.dark-mode .sidebar-categories-list a.active {
-    color: var(--dark-link);
-}
-
-/* ----- RESPONSIVE ----- */
+/* Responsive */
 @media (max-width: 768px) {
-    .page-header {
-        padding: 40px 0;
-    }
     .page-header h1 {
         font-size: 1.8rem;
     }
-    .page-header p {
-        font-size: 1rem;
-        padding: 0 15px;
-    }
+    
     .category-posts-container {
         grid-template-columns: 1fr;
         gap: 30px;
-        padding: 30px 15px;
     }
+    
     .category-sidebar {
         position: static;
-    }
-    .sidebar-widget {
-        margin-bottom: 20px;
     }
 }
 
 @media (max-width: 700px) {
+    .all-categories-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
     .category-post-item {
         padding: 20px;
     }
+    
     .category-post-item h2 {
         font-size: 1.2rem;
-    }
-    .category-post-meta {
-        flex-direction: column;
-        gap: 5px;
-    }
-}
-
-@media (max-width: 480px) {
-    .page-header {
-        padding: 30px 0;
-    }
-    .page-header h1 {
-        font-size: 1.5rem;
-    }
-    .category-post-item {
-        padding: 15px;
     }
 }
