@@ -1,17 +1,5 @@
 /* ============================================
    COMMON.CSS - SHARED ACROSS ALL PAGES
-   ============================================
-   ONLY contains:
-   - Base & Reset
-   - Typography
-   - Header (fixed + smart hide) - REDUCED HEIGHT
-   - Footer - REDUCED HEIGHT
-   - SECTION TITLES & UTILITIES (shared)
-   - SOFT CTA (shared)
-   - Dark Mode Variables & Base Styles
-   - Dark Mode Toggle Button
-   - Hamburger Menu
-   - Global Responsive
    ============================================ */
 
 /* ----- BASE & RESET ----- */
@@ -26,7 +14,7 @@ body {
     line-height: 1.6;
     color: #1a1a2e;
     background: #f8f9fa;
-    padding-top: 70px;  /* REDUCED from 80px to match smaller header */
+    padding-top: 70px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -54,12 +42,12 @@ a:hover {
 }
 
 /* ============================================
-   HEADER - REDUCED HEIGHT
+   HEADER
    ============================================ */
 header {
     background: #0a2540;
     color: white;
-    padding: 12px 0;  /* REDUCED from 20px to 12px */
+    padding: 12px 0;
     border-bottom: 3px solid #00b4d8;
     position: fixed;
     top: 0;
@@ -79,12 +67,12 @@ header {
 }
 
 .logo h1 {
-    font-size: 1.3rem;  /* REDUCED from 1.5rem */
+    font-size: 1.3rem;
     color: white;
 }
 
 .logo p {
-    font-size: 0.7rem;  /* REDUCED from 0.8rem */
+    font-size: 0.7rem;
     color: #a0c4e2;
 }
 
@@ -97,7 +85,6 @@ header {
     color: white;
 }
 
-/* Desktop navigation */
 nav {
     display: flex;
     gap: 25px;
@@ -107,12 +94,124 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
-    font-size: 0.85rem;  /* REDUCED from 0.9rem */
+    font-size: 0.85rem;
     transition: color 0.2s;
 }
 
 nav a:hover {
     color: #00b4d8;
+}
+
+/* ============================================
+   DARK MODE - Applied to html tag
+   ============================================ */
+html.dark-mode {
+    --dark-bg-primary: #0a0f1a;
+    --dark-bg-secondary: #0d1117;
+    --dark-bg-card: #121724;
+    --dark-bg-elevated: #1a2332;
+    --dark-text-primary: #f0f3f8;
+    --dark-text-secondary: #c9d1d9;
+    --dark-text-muted: #8b949e;
+    --dark-border: #1f2a3a;
+    --dark-link: #58c4dd;
+    --dark-link-hover: #7cd4e8;
+}
+
+html.dark-mode body {
+    background: var(--dark-bg-secondary);
+    color: var(--dark-text-primary);
+}
+
+html.dark-mode header,
+html.dark-mode footer {
+    background: var(--dark-bg-primary);
+}
+
+html.dark-mode header {
+    border-bottom-color: var(--dark-border);
+}
+
+html.dark-mode .logo p {
+    color: var(--dark-text-muted);
+}
+
+html.dark-mode nav a {
+    color: #ffffff;
+}
+
+html.dark-mode nav a:hover {
+    color: var(--dark-link);
+}
+
+html.dark-mode a {
+    color: var(--dark-link);
+}
+
+html.dark-mode a:hover {
+    color: var(--dark-link-hover);
+}
+
+html.dark-mode h1,
+html.dark-mode h2,
+html.dark-mode h3,
+html.dark-mode h4,
+html.dark-mode h5,
+html.dark-mode h6 {
+    color: var(--dark-text-primary);
+}
+
+html.dark-mode .section-title {
+    color: var(--dark-text-primary);
+}
+
+html.dark-mode .section-subtitle {
+    color: var(--dark-text-secondary);
+}
+
+html.dark-mode .bg-white {
+    background: var(--dark-bg-primary);
+}
+
+html.dark-mode .bg-light {
+    background: var(--dark-bg-secondary);
+}
+
+html.dark-mode .blog-cta {
+    background: var(--dark-bg-card);
+}
+
+html.dark-mode .blog-cta h3 {
+    color: var(--dark-text-primary);
+}
+
+html.dark-mode .blog-cta p {
+    color: var(--dark-text-secondary);
+}
+
+html.dark-mode .blog-cta .btn {
+    background: var(--dark-link);
+    color: #0a0f1a;
+}
+
+html.dark-mode .blog-cta .btn:hover {
+    background: var(--dark-link-hover);
+}
+
+html.dark-mode .blog-cta .disclosure-small {
+    color: var(--dark-text-muted);
+}
+
+html.dark-mode .dark-mode-toggle {
+    border-color: var(--dark-border);
+}
+
+html.dark-mode .dark-mode-toggle:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+html.dark-mode footer a {
+    color: var(--dark-link);
 }
 
 /* ============================================
@@ -122,9 +221,9 @@ nav a:hover {
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50px;
-    padding: 5px 12px;  /* REDUCED from 8px 16px */
+    padding: 5px 12px;
     cursor: pointer;
-    font-size: 0.8rem;  /* REDUCED from 0.9rem */
+    font-size: 0.8rem;
     transition: all 0.3s;
     color: white;
     display: inline-flex;
@@ -142,21 +241,58 @@ nav a:hover {
 }
 
 /* ============================================
-   FOOTER - REDUCED HEIGHT
+   HAMBURGER MENU
+   ============================================ */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 101;
+}
+
+.hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: white;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 99;
+}
+
+.menu-overlay.active {
+    display: block;
+}
+
+/* ============================================
+   FOOTER
    ============================================ */
 footer {
     background: #0a2540;
     color: #a0c4e2;
     text-align: center;
-    padding: 30px 0;  /* REDUCED from 40px to 30px */
+    padding: 30px 0;
     margin-top: 40px;
     transition: background 0.3s ease;
 }
 
 .footer-disclosure {
-    font-size: 0.7rem;  /* REDUCED from 0.75rem */
+    font-size: 0.7rem;
     max-width: 900px;
-    margin: 0 auto 15px;  /* REDUCED from 20px to 15px */
+    margin: 0 auto 15px;
     line-height: 1.5;
 }
 
@@ -170,7 +306,7 @@ footer a:hover {
 }
 
 /* ============================================
-   SECTION TITLES & UTILITIES (SHARED)
+   SECTION TITLES & UTILITIES
    ============================================ */
 .section-title {
     text-align: center;
@@ -190,7 +326,7 @@ footer a:hover {
 }
 
 .section-padding {
-    padding: 60px 0;  /* REDUCED from 70px to 60px */
+    padding: 60px 0;
 }
 
 .bg-white {
@@ -204,7 +340,7 @@ footer a:hover {
 .btn-primary {
     background: #00b4d8;
     color: #0a2540;
-    padding: 12px 28px;  /* SLIGHTLY REDUCED */
+    padding: 12px 28px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
@@ -223,7 +359,7 @@ footer a:hover {
 .btn-outline {
     border: 2px solid #00b4d8;
     color: #0a2540;
-    padding: 10px 26px;  /* SLIGHTLY REDUCED */
+    padding: 10px 26px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
@@ -245,19 +381,19 @@ footer a:hover {
 }
 
 /* ============================================
-   SOFT CTA (shared across multiple pages)
+   SOFT CTA
    ============================================ */
 .blog-cta {
     background: #e8f4f8;
     text-align: center;
-    padding: 35px;  /* REDUCED from 40px */
+    padding: 35px;
     border-radius: 16px;
     margin: 50px 0;
 }
 
 .blog-cta h3 {
     color: #0a2540;
-    font-size: 1.4rem;  /* SLIGHTLY REDUCED */
+    font-size: 1.4rem;
     margin-bottom: 12px;
 }
 
@@ -273,7 +409,7 @@ footer a:hover {
     display: inline-block;
     background: #00b4d8;
     color: #0a2540;
-    padding: 10px 24px;  /* SLIGHTLY REDUCED */
+    padding: 10px 24px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 50px;
@@ -286,164 +422,17 @@ footer a:hover {
 }
 
 .blog-cta .disclosure-small {
-    font-size: 0.65rem;  /* REDUCED */
+    font-size: 0.65rem;
     color: #6c757d;
     margin-top: 12px;
 }
 
 /* ============================================
-   HAMBURGER MENU (Mobile)
-   ============================================ */
-.hamburger {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px;  /* REDUCED */
-    z-index: 101;
-}
-
-.hamburger span {
-    display: block;
-    width: 22px;  /* SLIGHTLY REDUCED */
-    height: 2px;  /* REDUCED from 3px */
-    background: white;
-    margin: 4px 0;  /* REDUCED from 5px */
-    transition: all 0.3s ease;
-    border-radius: 2px;
-}
-
-.menu-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 99;
-}
-
-.menu-overlay.active {
-    display: block;
-}
-
-/* ============================================
-   DARK MODE - UNIFIED COLOR PALETTE
-   ============================================ */
-body.dark-mode {
-    --dark-bg-primary: #0a0f1a;
-    --dark-bg-secondary: #0d1117;
-    --dark-bg-card: #121724;
-    --dark-bg-elevated: #1a2332;
-    --dark-text-primary: #f0f3f8;
-    --dark-text-secondary: #c9d1d9;
-    --dark-text-muted: #8b949e;
-    --dark-border: #1f2a3a;
-    --dark-link: #58c4dd;
-    --dark-link-hover: #7cd4e8;
-    
-    background: var(--dark-bg-secondary);
-    color: var(--dark-text-primary);
-}
-
-body.dark-mode header,
-body.dark-mode footer {
-    background: var(--dark-bg-primary);
-}
-
-body.dark-mode header {
-    border-bottom-color: var(--dark-border);
-}
-
-body.dark-mode .logo p {
-    color: var(--dark-text-muted);
-}
-
-body.dark-mode nav a {
-    color: #ffffff;
-}
-
-body.dark-mode nav a:hover {
-    color: var(--dark-link);
-}
-
-body.dark-mode a {
-    color: var(--dark-link);
-}
-
-body.dark-mode a:hover {
-    color: var(--dark-link-hover);
-}
-
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode h4,
-body.dark-mode h5,
-body.dark-mode h6 {
-    color: var(--dark-text-primary);
-}
-
-body.dark-mode .section-title {
-    color: var(--dark-text-primary);
-}
-
-body.dark-mode .section-subtitle {
-    color: var(--dark-text-secondary);
-}
-
-body.dark-mode .bg-white {
-    background: var(--dark-bg-primary);
-}
-
-body.dark-mode .bg-light {
-    background: var(--dark-bg-secondary);
-}
-
-body.dark-mode .blog-cta {
-    background: var(--dark-bg-card);
-}
-
-body.dark-mode .blog-cta h3 {
-    color: var(--dark-text-primary);
-}
-
-body.dark-mode .blog-cta p {
-    color: var(--dark-text-secondary);
-}
-
-body.dark-mode .blog-cta .btn {
-    background: var(--dark-link);
-    color: #0a0f1a;
-}
-
-body.dark-mode .blog-cta .btn:hover {
-    background: var(--dark-link-hover);
-}
-
-body.dark-mode .blog-cta .disclosure-small {
-    color: var(--dark-text-muted);
-}
-
-body.dark-mode .dark-mode-toggle {
-    border-color: var(--dark-border);
-}
-
-body.dark-mode .dark-mode-toggle:hover {
-    background: rgba(255, 255, 255, 0.05);
-}
-
-body.dark-mode footer a {
-    color: var(--dark-link);
-}
-
-/* ============================================
-   GLOBAL RESPONSIVE
+   RESPONSIVE
    ============================================ */
 @media (max-width: 768px) {
     body {
-        padding-top: 60px;  /* MATCH reduced header */
+        padding-top: 60px;
     }
     
     .header-flex {
@@ -479,7 +468,7 @@ body.dark-mode footer a {
         box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
     }
     
-    body.dark-mode nav {
+    html.dark-mode nav {
         background: var(--dark-bg-primary);
     }
     
