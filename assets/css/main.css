@@ -2,6 +2,7 @@
    MAIN-HOME.CSS - Main Homepage Only
    ============================================
    For: structuretradelab.com
+   Light mode only - dark mode is in common.css
    ============================================ */
 
 .hero {
@@ -255,96 +256,6 @@
 .view-all {
     text-align: center;
     margin-top: 40px;
-}
-
-/* Dark Mode for Main Homepage */
-body.dark-mode .hero {
-    background: linear-gradient(135deg, #0a0f1a 0%, #0d1f2d 100%);
-}
-
-body.dark-mode .hero p {
-    color: var(--dark-text-muted);
-}
-
-body.dark-mode .featured-card {
-    background: var(--dark-bg-card);
-    border-color: var(--dark-border);
-}
-
-body.dark-mode .featured-card h3 a {
-    color: #ffffff;
-}
-
-body.dark-mode .featured-card h3 a:hover {
-    color: var(--dark-link);
-}
-
-body.dark-mode .featured-card p {
-    color: var(--dark-text-secondary);
-}
-
-body.dark-mode .card-category {
-    color: var(--dark-link);
-}
-
-body.dark-mode .tool-card {
-    background: var(--dark-bg-card);
-    border-color: var(--dark-border);
-}
-
-body.dark-mode .tool-card h3 {
-    color: var(--dark-text-primary);
-}
-
-body.dark-mode .tool-card p {
-    color: var(--dark-text-secondary);
-}
-
-body.dark-mode .badge {
-    background: var(--dark-bg-elevated, #1a2332);
-    color: var(--dark-text-secondary);
-}
-
-body.dark-mode .pill {
-    background: var(--dark-bg-elevated, #1a2332);
-    color: var(--dark-text-secondary);
-    border-color: var(--dark-border);
-}
-
-body.dark-mode .pill:hover {
-    background: var(--dark-link);
-    color: #0a0f1a;
-}
-
-body.dark-mode .post-card {
-    background: var(--dark-bg-card);
-    border-color: var(--dark-border);
-}
-
-body.dark-mode .post-category {
-    background: var(--dark-bg-elevated, #1a2332);
-    color: var(--dark-text-secondary);
-}
-
-body.dark-mode .post-title a {
-    color: #ffffff;
-}
-
-body.dark-mode .post-title a:hover {
-    color: var(--dark-link);
-}
-
-body.dark-mode .post-excerpt {
-    color: var(--dark-text-secondary);
-}
-
-body.dark-mode .post-meta {
-    color: var(--dark-text-muted);
-    border-top-color: var(--dark-border);
-}
-
-body.dark-mode .read-more {
-    color: var(--dark-link);
 }
 
 /* Responsive */

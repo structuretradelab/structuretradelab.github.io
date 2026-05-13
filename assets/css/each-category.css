@@ -10,6 +10,8 @@
    - /category/strategy-&-analysis/
    - /category/common-mistakes/
    - /category/tools-&-resources/
+   
+   Light mode only - dark mode is in common.css
    ============================================ */
 
 /* ----- PAGE HEADER ----- */
@@ -33,9 +35,7 @@
     color: #cce4f0;
 }
 
-/* ============================================
-   CATEGORY POSTS CONTAINER (2-column layout)
-   ============================================ */
+/* ----- CATEGORY POSTS CONTAINER (2-column layout) ----- */
 .category-posts-container {
     max-width: 1100px;
     margin: 0 auto;
@@ -138,6 +138,24 @@
     margin-bottom: 20px;
 }
 
+.category-empty .btn-outline {
+    display: inline-block;
+    border: 2px solid #00b4d8;
+    color: #0a2540;
+    padding: 10px 26px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    background: transparent;
+}
+
+.category-empty .btn-outline:hover {
+    background: #00b4d8;
+    color: #0a2540;
+    transform: translateY(-2px);
+}
+
 /* ============================================
    SIDEBAR (Right column)
    ============================================ */
@@ -196,83 +214,6 @@
 .sidebar-categories-list a.active {
     color: #00b4d8;
     font-weight: bold;
-}
-
-/* ============================================
-   DARK MODE STYLES
-   ============================================ */
-body.dark-mode .page-header {
-    background: linear-gradient(135deg, #0a0f1a 0%, #0d1f2d 100%);
-}
-
-body.dark-mode .page-header p {
-    color: var(--dark-text-muted, #8b949e);
-}
-
-body.dark-mode .category-post-item {
-    background: var(--dark-bg-card, #121724);
-    border-color: var(--dark-border, #1f2a3a);
-}
-
-body.dark-mode .category-post-meta {
-    color: var(--dark-text-muted, #8b949e);
-}
-
-body.dark-mode .category-post-item h2 a {
-    color: #ffffff;
-}
-
-body.dark-mode .category-post-item h2 a:hover {
-    color: var(--dark-link, #58c4dd);
-}
-
-body.dark-mode .category-post-item p {
-    color: var(--dark-text-secondary, #c9d1d9);
-}
-
-body.dark-mode .category-post-item .read-more {
-    color: var(--dark-link, #58c4dd);
-}
-
-body.dark-mode .category-post-item .read-more:hover {
-    color: var(--dark-link-hover, #7cd4e8);
-}
-
-body.dark-mode .category-empty {
-    background: var(--dark-bg-card, #121724);
-    border-color: var(--dark-border, #1f2a3a);
-}
-
-body.dark-mode .category-empty h2 {
-    color: var(--dark-text-primary, #f0f3f8);
-}
-
-body.dark-mode .category-empty p {
-    color: var(--dark-text-secondary, #c9d1d9);
-}
-
-body.dark-mode .sidebar-widget {
-    background: var(--dark-bg-card, #121724);
-    border-color: var(--dark-border, #1f2a3a);
-}
-
-body.dark-mode .sidebar-widget h3 {
-    color: var(--dark-text-primary, #f0f3f8);
-    border-bottom-color: var(--dark-link, #58c4dd);
-}
-
-body.dark-mode .sidebar-categories-list a,
-body.dark-mode .sidebar-essentials-list a {
-    color: var(--dark-text-secondary, #c9d1d9);
-}
-
-body.dark-mode .sidebar-categories-list a:hover,
-body.dark-mode .sidebar-essentials-list a:hover {
-    color: var(--dark-link, #58c4dd);
-}
-
-body.dark-mode .sidebar-categories-list a.active {
-    color: var(--dark-link, #58c4dd);
 }
 
 /* ============================================

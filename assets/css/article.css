@@ -2,6 +2,7 @@
    ARTICLE.CSS - Article Pages Only
    ============================================
    For: Individual blog post pages
+   Light mode only - dark mode is in common.css
    ============================================ */
 
 .article-container {
@@ -86,6 +87,12 @@
     margin: 30px 0 12px 0;
 }
 
+.article-content h4 {
+    font-size: 1.1rem;
+    color: #0a2540;
+    margin: 25px 0 10px 0;
+}
+
 .article-content p {
     margin-bottom: 1.2em;
 }
@@ -93,6 +100,75 @@
 .article-content ul,
 .article-content ol {
     margin: 1em 0 1em 2em;
+}
+
+.article-content li {
+    margin-bottom: 0.5em;
+}
+
+.article-content blockquote {
+    background: #f0f7fa;
+    border-left: 4px solid #00b4d8;
+    padding: 1em 1.5em;
+    margin: 1.5em 0;
+    font-style: italic;
+    color: #2c3e4e;
+    border-radius: 0 12px 12px 0;
+}
+
+.article-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 1.5em 0;
+}
+
+.article-content code {
+    background: #f0f4f8;
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+.article-content pre {
+    background: #1a1a2e;
+    color: #e0e0e0;
+    padding: 1em;
+    border-radius: 12px;
+    overflow-x: auto;
+    margin: 1.5em 0;
+}
+
+.article-content pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+}
+
+.article-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+}
+
+.article-content th,
+.article-content td {
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    text-align: left;
+}
+
+.article-content th {
+    background: #f0f4f8;
+    font-weight: bold;
+}
+
+.article-content hr {
+    margin: 2em 0;
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, #e0e0e0, #00b4d8, #e0e0e0);
 }
 
 .info-box {
@@ -157,6 +233,10 @@
     color: #00b4d8;
     text-decoration: none;
     font-weight: bold;
+}
+
+.internal-link a:hover {
+    text-decoration: underline;
 }
 
 .author-bio {
@@ -265,118 +345,8 @@
     color: #6c757d;
 }
 
-/* Dark Mode */
-body.dark-mode .article-container {
-    background: var(--dark-bg-primary);
-}
-
-body.dark-mode .article-header {
-    border-bottom-color: var(--dark-border);
-}
-
-body.dark-mode .article-category {
-    background: var(--dark-bg-elevated, #1a2332);
-    color: var(--dark-text-secondary);
-}
-
-body.dark-mode .article-category a {
-    color: var(--dark-text-secondary);
-}
-
-body.dark-mode .article-title {
-    color: var(--dark-text-primary);
-}
-
-body.dark-mode .article-meta {
-    color: var(--dark-text-muted);
-}
-
-body.dark-mode .article-content {
-    color: var(--dark-text-secondary);
-}
-
-body.dark-mode .article-content h2,
-body.dark-mode .article-content h3 {
-    color: var(--dark-text-primary);
-    border-bottom-color: var(--dark-border);
-}
-
-body.dark-mode .info-box,
-body.dark-mode .internal-link {
-    background: var(--dark-bg-card);
-    border-left-color: var(--dark-link);
-}
-
-body.dark-mode .warning-box {
-    background: rgba(255, 152, 0, 0.1);
-}
-
-body.dark-mode .table-of-contents {
-    background: var(--dark-bg-card);
-    border-color: var(--dark-border);
-}
-
-body.dark-mode .table-of-contents a {
-    color: var(--dark-text-secondary);
-}
-
-body.dark-mode .table-of-contents a:hover {
-    color: var(--dark-link);
-}
-
-body.dark-mode .author-bio {
-    background: var(--dark-bg-card);
-    border-color: var(--dark-border);
-}
-
-body.dark-mode .author-avatar {
-    background: var(--dark-bg-elevated, #1a2332);
-}
-
-body.dark-mode .author-info h4 {
-    color: var(--dark-text-primary);
-}
-
-body.dark-mode .author-info p {
-    color: var(--dark-text-secondary);
-}
-
-body.dark-mode .related-posts {
-    border-top-color: var(--dark-border);
-}
-
-body.dark-mode .related-posts h3 {
-    color: var(--dark-text-primary);
-}
-
-body.dark-mode .related-card {
-    background: var(--dark-bg-card);
-    border-color: var(--dark-border);
-}
-
-body.dark-mode .related-card .category {
-    color: var(--dark-link);
-}
-
-body.dark-mode .related-card h4 a {
-    color: #ffffff;
-}
-
-body.dark-mode .related-card h4 a:hover {
-    color: var(--dark-link);
-}
-
-body.dark-mode .related-card p {
-    color: var(--dark-text-secondary);
-}
-
-body.dark-mode .comments-section {
-    background: var(--dark-bg-card);
-    border-color: var(--dark-border);
-}
-
-body.dark-mode .comments-section p {
-    color: var(--dark-text-muted);
+.comments-section a {
+    color: #00b4d8;
 }
 
 /* Responsive */
@@ -393,6 +363,14 @@ body.dark-mode .comments-section p {
         font-size: 1.4rem;
     }
     
+    .article-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .article-content h4 {
+        font-size: 1rem;
+    }
+    
     .author-bio {
         flex-direction: column;
         text-align: center;
@@ -407,5 +385,9 @@ body.dark-mode .comments-section p {
     .article-meta {
         flex-direction: column;
         gap: 5px;
+    }
+    
+    .table-of-contents {
+        padding: 15px;
     }
 }

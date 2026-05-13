@@ -2,6 +2,7 @@
    BROKER-SETUP.CSS - Broker Setup Page Only
    ============================================
    For: structuretradelab.com/broker-setup/
+   Light mode only - dark mode is in common.css
    ============================================ */
 
 .broker-setup-container {
@@ -16,6 +17,10 @@
     margin-bottom: 30px;
     padding-bottom: 20px;
     border-bottom: 1px solid #e0e0e0;
+}
+
+.broker-intro p {
+    color: #2c3e4e;
 }
 
 .pros-cons-grid {
@@ -105,6 +110,11 @@
     margin-bottom: 15px;
 }
 
+.withdrawal-section p {
+    margin-bottom: 15px;
+    color: #2c3e4e;
+}
+
 .regulation-section {
     margin: 40px 0;
 }
@@ -113,6 +123,11 @@
     font-size: 1.6rem;
     color: #0a2540;
     margin-bottom: 15px;
+}
+
+.regulation-section p {
+    margin-bottom: 15px;
+    color: #2c3e4e;
 }
 
 .regulation-section ul {
@@ -132,6 +147,11 @@
     font-size: 1.6rem;
     color: #0a2540;
     margin-bottom: 15px;
+}
+
+.experience-section p {
+    margin-bottom: 15px;
+    color: #2c3e4e;
 }
 
 .final-cta {
@@ -187,90 +207,6 @@
     font-size: 0.7rem;
     color: #a0c4e2;
     margin-top: 15px;
-}
-
-/* Dark Mode */
-body.dark-mode .broker-setup-container {
-    background: var(--dark-bg-primary);
-}
-
-body.dark-mode .broker-intro {
-    border-bottom-color: var(--dark-border);
-}
-
-body.dark-mode .pros-box,
-body.dark-mode .cons-box {
-    background: var(--dark-bg-card);
-}
-
-body.dark-mode .pros-box h3,
-body.dark-mode .cons-box h3 {
-    color: var(--dark-text-primary);
-}
-
-body.dark-mode .pros-box ul,
-body.dark-mode .cons-box ul {
-    color: var(--dark-text-secondary);
-}
-
-body.dark-mode .spreads-section h2,
-body.dark-mode .withdrawal-section h2,
-body.dark-mode .regulation-section h2,
-body.dark-mode .experience-section h2 {
-    color: var(--dark-text-primary);
-}
-
-body.dark-mode .spreads-table th,
-body.dark-mode .spreads-table td {
-    border-color: var(--dark-border);
-}
-
-body.dark-mode .spreads-table th {
-    background: var(--dark-bg-primary);
-    color: var(--dark-text-primary);
-}
-
-body.dark-mode .spreads-table td {
-    background: var(--dark-bg-card);
-    color: var(--dark-text-secondary);
-}
-
-body.dark-mode .spreads-table tr:nth-child(even) td {
-    background: var(--dark-bg-elevated, #1a2332);
-}
-
-body.dark-mode .disclaimer-small {
-    color: var(--dark-text-muted);
-}
-
-body.dark-mode .regulation-section ul {
-    color: var(--dark-text-secondary);
-}
-
-body.dark-mode .final-cta {
-    background: var(--dark-bg-primary);
-}
-
-body.dark-mode .final-cta p {
-    color: var(--dark-text-muted);
-}
-
-body.dark-mode .final-cta ul {
-    color: var(--dark-text-muted);
-}
-
-body.dark-mode .final-cta .btn {
-    background: var(--dark-link);
-    color: #0a0f1a;
-}
-
-body.dark-mode .final-cta .btn:hover {
-    background: var(--dark-link-hover);
-}
-
-body.dark-mode .final-cta .disclosure-full,
-body.dark-mode .final-cta .risk-warning {
-    color: var(--dark-text-muted);
 }
 
 /* Responsive */
