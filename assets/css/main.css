@@ -2,9 +2,9 @@
    MAIN-HOME.CSS - Main Homepage Only
    ============================================
    For: structuretradelab.com
-   Light mode only - dark mode is in common.css
    ============================================ */
 
+/* ----- LIGHT MODE ----- */
 .hero {
     background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%);
     color: white;
@@ -258,7 +258,268 @@
     margin-top: 40px;
 }
 
-/* Responsive */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 12px;
+    color: #0a2540;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1rem;
+    color: #4a5568;
+    margin-bottom: 40px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-padding {
+    padding: 60px 0;
+}
+
+.bg-white {
+    background: white;
+}
+
+.bg-light {
+    background: #f8f9fa;
+}
+
+.btn-primary {
+    background: #00b4d8;
+    color: #0a2540;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #0096b8;
+    transform: translateY(-2px);
+    color: #0a2540;
+}
+
+.btn-outline {
+    border: 2px solid #00b4d8;
+    color: #0a2540;
+    padding: 10px 26px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    display: inline-block;
+    background: transparent;
+    cursor: pointer;
+}
+
+.btn-outline:hover {
+    background: #00b4d8;
+    color: #0a2540;
+    transform: translateY(-2px);
+}
+
+.blog-cta {
+    background: #e8f4f8;
+    text-align: center;
+    padding: 35px;
+    border-radius: 16px;
+    margin: 50px 0;
+}
+
+.blog-cta h3 {
+    color: #0a2540;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.blog-cta p {
+    color: #4a5568;
+    margin-bottom: 18px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blog-cta .btn {
+    display: inline-block;
+    background: #00b4d8;
+    color: #0a2540;
+    padding: 10px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+
+.blog-cta .btn:hover {
+    background: #0096b8;
+    transform: translateY(-2px);
+}
+
+.blog-cta .disclosure-small {
+    font-size: 0.65rem;
+    color: #6c757d;
+    margin-top: 12px;
+}
+
+/* ----- DARK MODE ----- */
+html.dark-mode .hero {
+    background: linear-gradient(135deg, #0a0f1a 0%, #0d1f2d 100%);
+}
+
+html.dark-mode .hero p {
+    color: var(--dark-text-muted);
+}
+
+html.dark-mode .featured-card {
+    background: var(--dark-bg-card);
+    border-color: var(--dark-border);
+}
+
+html.dark-mode .featured-card h3 a {
+    color: var(--dark-text-primary);
+}
+
+html.dark-mode .featured-card h3 a:hover {
+    color: var(--dark-link);
+}
+
+html.dark-mode .featured-card p {
+    color: var(--dark-text-secondary);
+}
+
+html.dark-mode .card-category {
+    color: var(--dark-link);
+}
+
+html.dark-mode .tool-card {
+    background: var(--dark-bg-card);
+    border-color: var(--dark-border);
+}
+
+html.dark-mode .tool-card h3 {
+    color: var(--dark-text-primary);
+}
+
+html.dark-mode .tool-card p {
+    color: var(--dark-text-secondary);
+}
+
+html.dark-mode .badge {
+    background: var(--dark-bg-elevated);
+    color: var(--dark-text-secondary);
+}
+
+html.dark-mode .pill {
+    background: var(--dark-bg-elevated);
+    color: var(--dark-text-secondary);
+    border-color: var(--dark-border);
+}
+
+html.dark-mode .pill:hover {
+    background: var(--dark-link);
+    color: #0a0f1a;
+}
+
+html.dark-mode .post-card {
+    background: var(--dark-bg-card);
+    border-color: var(--dark-border);
+}
+
+html.dark-mode .post-category {
+    background: var(--dark-bg-elevated);
+    color: var(--dark-text-secondary);
+}
+
+html.dark-mode .post-title a {
+    color: var(--dark-text-primary);
+}
+
+html.dark-mode .post-title a:hover {
+    color: var(--dark-link);
+}
+
+html.dark-mode .post-excerpt {
+    color: var(--dark-text-secondary);
+}
+
+html.dark-mode .post-meta {
+    color: var(--dark-text-muted);
+    border-top-color: var(--dark-border);
+}
+
+html.dark-mode .read-more {
+    color: var(--dark-link);
+}
+
+html.dark-mode .section-title {
+    color: var(--dark-text-primary);
+}
+
+html.dark-mode .section-subtitle {
+    color: var(--dark-text-secondary);
+}
+
+html.dark-mode .bg-white {
+    background: var(--dark-bg-primary);
+}
+
+html.dark-mode .bg-light {
+    background: var(--dark-bg-secondary);
+}
+
+html.dark-mode .blog-cta {
+    background: var(--dark-bg-card);
+}
+
+html.dark-mode .blog-cta h3 {
+    color: var(--dark-text-primary);
+}
+
+html.dark-mode .blog-cta p {
+    color: var(--dark-text-secondary);
+}
+
+html.dark-mode .blog-cta .btn {
+    background: var(--dark-link);
+    color: #0a0f1a;
+}
+
+html.dark-mode .blog-cta .btn:hover {
+    background: var(--dark-link-hover);
+}
+
+html.dark-mode .blog-cta .disclosure-small {
+    color: var(--dark-text-muted);
+}
+
+html.dark-mode .btn-primary {
+    background: var(--dark-link);
+    color: #0a0f1a;
+}
+
+html.dark-mode .btn-primary:hover {
+    background: var(--dark-link-hover);
+}
+
+html.dark-mode .btn-outline {
+    border-color: var(--dark-link);
+    color: var(--dark-link);
+}
+
+html.dark-mode .btn-outline:hover {
+    background: var(--dark-link);
+    color: #0a0f1a;
+}
+
+/* ----- RESPONSIVE ----- */
 @media (max-width: 1000px) {
     .featured-grid,
     .tools-grid,
@@ -277,6 +538,19 @@
     .hero {
         padding: 60px 0;
     }
+    .section-title {
+        font-size: 1.5rem;
+    }
+    .section-padding {
+        padding: 40px 0;
+    }
+    .blog-cta {
+        padding: 20px;
+        margin: 30px 0;
+    }
+    .blog-cta h3 {
+        font-size: 1.2rem;
+    }
 }
 
 @media (max-width: 700px) {
@@ -294,5 +568,10 @@
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+    }
+    .btn-primary,
+    .btn-outline {
+        width: 100%;
+        text-align: center;
     }
 }

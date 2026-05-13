@@ -2,9 +2,9 @@
    BLOG.CSS - Blog Homepage Only
    ============================================
    For: blog.structuretradelab.com
-   Light mode only - dark mode is in common.css
    ============================================ */
 
+/* ----- LIGHT MODE ----- */
 .blog-hero {
     background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%);
     color: white;
@@ -155,6 +155,7 @@
     font-size: 0.7rem;
     font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
     color: #0a2540;
     margin-bottom: 12px;
     align-self: flex-start;
@@ -163,6 +164,7 @@
 .post-title {
     font-size: 1.25rem;
     margin-bottom: 12px;
+    line-height: 1.4;
 }
 
 .post-title a {
@@ -210,7 +212,89 @@
     margin-top: 40px;
 }
 
-/* Responsive */
+/* ----- DARK MODE ----- */
+html.dark-mode .blog-hero {
+    background: linear-gradient(135deg, #0a0f1a 0%, #0d1f2d 100%);
+}
+
+html.dark-mode .blog-hero p {
+    color: var(--dark-text-muted);
+}
+
+html.dark-mode .featured-section,
+html.dark-mode .categories-section {
+    background: var(--dark-bg-primary);
+    border-bottom-color: var(--dark-border);
+}
+
+html.dark-mode .featured-item {
+    background: var(--dark-bg-card);
+    border-color: var(--dark-border);
+}
+
+html.dark-mode .featured-item h3 a {
+    color: var(--dark-text-primary);
+}
+
+html.dark-mode .featured-item h3 a:hover {
+    color: var(--dark-link);
+}
+
+html.dark-mode .featured-item p {
+    color: var(--dark-text-secondary);
+}
+
+html.dark-mode .sidebar-category {
+    color: var(--dark-link);
+}
+
+html.dark-mode .category-card {
+    background: var(--dark-bg-elevated);
+    color: var(--dark-text-secondary);
+    border-color: var(--dark-border);
+}
+
+html.dark-mode .category-card:hover {
+    background: var(--dark-link);
+    color: #0a0f1a;
+}
+
+html.dark-mode .latest-section {
+    background: var(--dark-bg-secondary);
+}
+
+html.dark-mode .post-card {
+    background: var(--dark-bg-card);
+    border-color: var(--dark-border);
+}
+
+html.dark-mode .post-category {
+    background: var(--dark-bg-elevated);
+    color: var(--dark-text-secondary);
+}
+
+html.dark-mode .post-title a {
+    color: var(--dark-text-primary);
+}
+
+html.dark-mode .post-title a:hover {
+    color: var(--dark-link);
+}
+
+html.dark-mode .post-excerpt {
+    color: var(--dark-text-secondary);
+}
+
+html.dark-mode .post-meta {
+    color: var(--dark-text-muted);
+    border-top-color: var(--dark-border);
+}
+
+html.dark-mode .read-more {
+    color: var(--dark-link);
+}
+
+/* ----- RESPONSIVE ----- */
 @media (max-width: 1000px) {
     .featured-grid,
     .posts-grid {
@@ -229,7 +313,6 @@
     .posts-grid {
         grid-template-columns: 1fr;
     }
-    
     .category-card {
         white-space: normal;
         font-size: 0.85rem;

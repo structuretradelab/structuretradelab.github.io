@@ -1,17 +1,15 @@
 /* ============================================
-   COMMON.CSS - SHARED ACROSS ALL PAGES
+   COMMON.CSS - TRULY SHARED ACROSS ALL PAGES
    ============================================
    ONLY contains:
    - Base & Reset
    - Typography
-   - Header (fixed + smart hide) - REDUCED HEIGHT
-   - Footer - REDUCED HEIGHT
-   - SECTION TITLES & UTILITIES (shared)
-   - SOFT CTA (shared)
-   - Dark Mode Variables & Base Styles
+   - Header (fixed + smart hide)
+   - Footer
+   - Dark Mode VARIABLES only (no page-specific styles)
    - Dark Mode Toggle Button
    - Hamburger Menu
-   - Global Responsive
+   - Global Responsive (header/footer only)
    ============================================ */
 
 /* ----- BASE & RESET ----- */
@@ -54,7 +52,7 @@ a:hover {
 }
 
 /* ============================================
-   HEADER - REDUCED HEIGHT
+   HEADER
    ============================================ */
 header {
     background: #0a2540;
@@ -97,7 +95,6 @@ header {
     color: white;
 }
 
-/* Desktop navigation */
 nav {
     display: flex;
     gap: 25px;
@@ -142,7 +139,7 @@ nav a:hover {
 }
 
 /* ============================================
-   FOOTER - REDUCED HEIGHT
+   FOOTER
    ============================================ */
 footer {
     background: #0a2540;
@@ -170,129 +167,7 @@ footer a:hover {
 }
 
 /* ============================================
-   SECTION TITLES & UTILITIES (SHARED)
-   ============================================ */
-.section-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 12px;
-    color: #0a2540;
-}
-
-.section-subtitle {
-    text-align: center;
-    font-size: 1rem;
-    color: #4a5568;
-    margin-bottom: 40px;
-    max-width: 650px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.section-padding {
-    padding: 60px 0;
-}
-
-.bg-white {
-    background: white;
-}
-
-.bg-light {
-    background: #f8f9fa;
-}
-
-.btn-primary {
-    background: #00b4d8;
-    color: #0a2540;
-    padding: 12px 28px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s;
-    display: inline-block;
-    border: none;
-    cursor: pointer;
-}
-
-.btn-primary:hover {
-    background: #0096b8;
-    transform: translateY(-2px);
-    color: #0a2540;
-}
-
-.btn-outline {
-    border: 2px solid #00b4d8;
-    color: #0a2540;
-    padding: 10px 26px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s;
-    display: inline-block;
-    background: transparent;
-    cursor: pointer;
-}
-
-.btn-outline:hover {
-    background: #00b4d8;
-    color: #0a2540;
-    transform: translateY(-2px);
-}
-
-.view-all {
-    text-align: center;
-    margin-top: 40px;
-}
-
-/* ============================================
-   SOFT CTA (shared across multiple pages)
-   ============================================ */
-.blog-cta {
-    background: #e8f4f8;
-    text-align: center;
-    padding: 35px;
-    border-radius: 16px;
-    margin: 50px 0;
-}
-
-.blog-cta h3 {
-    color: #0a2540;
-    font-size: 1.4rem;
-    margin-bottom: 12px;
-}
-
-.blog-cta p {
-    color: #4a5568;
-    margin-bottom: 18px;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.blog-cta .btn {
-    display: inline-block;
-    background: #00b4d8;
-    color: #0a2540;
-    padding: 10px 24px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 50px;
-    transition: all 0.3s;
-}
-
-.blog-cta .btn:hover {
-    background: #0096b8;
-    transform: translateY(-2px);
-}
-
-.blog-cta .disclosure-small {
-    font-size: 0.65rem;
-    color: #6c757d;
-    margin-top: 12px;
-}
-
-/* ============================================
-   HAMBURGER MENU (Mobile)
+   HAMBURGER MENU
    ============================================ */
 .hamburger {
     display: none;
@@ -329,8 +204,7 @@ footer a:hover {
 }
 
 /* ============================================
-   DARK MODE - UNIFIED COLOR PALETTE
-   NOTE: Uses html.dark-mode (not body.dark-mode) to prevent flash
+   DARK MODE VARIABLES (ONLY - no page styles)
    ============================================ */
 html.dark-mode {
     --dark-bg-primary: #0a0f1a;
@@ -345,23 +219,13 @@ html.dark-mode {
     --dark-link-hover: #7cd4e8;
 }
 
-/* Base body dark mode */
+/* Base dark mode - body only */
 html.dark-mode body {
     background: var(--dark-bg-secondary);
     color: var(--dark-text-primary);
 }
 
-/* Containers - CRITICAL for all pages */
-html.dark-mode .container,
-html.dark-mode .article-container,
-html.dark-mode .calculator-container,
-html.dark-mode .category-posts-container,
-html.dark-mode .broker-setup-container {
-    background: transparent;
-    color: var(--dark-text-primary);
-}
-
-/* Header & Footer */
+/* Header & Footer dark mode */
 html.dark-mode header,
 html.dark-mode footer {
     background: var(--dark-bg-primary);
@@ -375,7 +239,6 @@ html.dark-mode .logo p {
     color: var(--dark-text-muted);
 }
 
-/* Navigation */
 html.dark-mode nav a {
     color: #ffffff;
 }
@@ -384,7 +247,6 @@ html.dark-mode nav a:hover {
     color: var(--dark-link);
 }
 
-/* Links */
 html.dark-mode a {
     color: var(--dark-link);
 }
@@ -393,7 +255,6 @@ html.dark-mode a:hover {
     color: var(--dark-link-hover);
 }
 
-/* Headings */
 html.dark-mode h1,
 html.dark-mode h2,
 html.dark-mode h3,
@@ -403,70 +264,6 @@ html.dark-mode h6 {
     color: var(--dark-text-primary);
 }
 
-/* Section titles */
-html.dark-mode .section-title {
-    color: var(--dark-text-primary);
-}
-
-html.dark-mode .section-subtitle {
-    color: var(--dark-text-secondary);
-}
-
-/* Background utilities */
-html.dark-mode .bg-white {
-    background: var(--dark-bg-primary);
-}
-
-html.dark-mode .bg-light {
-    background: var(--dark-bg-secondary);
-}
-
-/* Cards and content blocks */
-html.dark-mode .featured-card,
-html.dark-mode .post-card,
-html.dark-mode .tool-card,
-html.dark-mode .featured-item,
-html.dark-mode .related-card,
-html.dark-mode .category-card-large,
-html.dark-mode .category-post-item,
-html.dark-mode .sidebar-widget,
-html.dark-mode .pros-box,
-html.dark-mode .cons-box,
-html.dark-mode .table-of-contents,
-html.dark-mode .author-bio,
-html.dark-mode .comments-section,
-html.dark-mode .calculator-container {
-    background: var(--dark-bg-card);
-    border-color: var(--dark-border);
-}
-
-/* Blog CTA */
-html.dark-mode .blog-cta {
-    background: var(--dark-bg-card);
-}
-
-html.dark-mode .blog-cta h3 {
-    color: var(--dark-text-primary);
-}
-
-html.dark-mode .blog-cta p {
-    color: var(--dark-text-secondary);
-}
-
-html.dark-mode .blog-cta .btn {
-    background: var(--dark-link);
-    color: #0a0f1a;
-}
-
-html.dark-mode .blog-cta .btn:hover {
-    background: var(--dark-link-hover);
-}
-
-html.dark-mode .blog-cta .disclosure-small {
-    color: var(--dark-text-muted);
-}
-
-/* Dark mode toggle button */
 html.dark-mode .dark-mode-toggle {
     border-color: var(--dark-border);
 }
@@ -475,113 +272,12 @@ html.dark-mode .dark-mode-toggle:hover {
     background: rgba(255, 255, 255, 0.05);
 }
 
-/* Footer links */
 html.dark-mode footer a {
     color: var(--dark-link);
 }
 
-/* Post elements */
-html.dark-mode .post-category,
-html.dark-mode .article-category,
-html.dark-mode .card-category {
-    background: var(--dark-bg-elevated);
-    color: var(--dark-text-secondary);
-}
-
-html.dark-mode .post-meta,
-html.dark-mode .article-meta,
-html.dark-mode .category-post-meta {
-    color: var(--dark-text-muted);
-}
-
-html.dark-mode .post-excerpt,
-html.dark-mode .featured-card p,
-html.dark-mode .tool-card p,
-html.dark-mode .category-post-item p {
-    color: var(--dark-text-secondary);
-}
-
-html.dark-mode .post-title a,
-html.dark-mode .featured-card h3 a,
-html.dark-mode .category-post-item h2 a {
-    color: var(--dark-text-primary);
-}
-
-html.dark-mode .post-title a:hover,
-html.dark-mode .featured-card h3 a:hover,
-html.dark-mode .category-post-item h2 a:hover {
-    color: var(--dark-link);
-}
-
-/* Category pills */
-html.dark-mode .pill,
-html.dark-mode .category-card {
-    background: var(--dark-bg-elevated);
-    color: var(--dark-text-secondary);
-    border-color: var(--dark-border);
-}
-
-html.dark-mode .pill:hover,
-html.dark-mode .category-card:hover {
-    background: var(--dark-link);
-    color: #0a0f1a;
-}
-
-/* Badges */
-html.dark-mode .badge {
-    background: var(--dark-bg-elevated);
-    color: var(--dark-text-secondary);
-}
-
-/* Info boxes */
-html.dark-mode .info-box,
-html.dark-mode .internal-link {
-    background: var(--dark-bg-card);
-    border-left-color: var(--dark-link);
-    color: var(--dark-text-secondary);
-}
-
-html.dark-mode .warning-box {
-    background: rgba(255, 152, 0, 0.1);
-}
-
-/* Tables */
-html.dark-mode table,
-html.dark-mode .spreads-table {
-    border-color: var(--dark-border);
-}
-
-html.dark-mode th,
-html.dark-mode td,
-html.dark-mode .spreads-table th,
-html.dark-mode .spreads-table td {
-    border-color: var(--dark-border);
-    background: var(--dark-bg-secondary);
-    color: var(--dark-text-secondary);
-}
-
-html.dark-mode .spreads-table th {
-    background: var(--dark-bg-primary);
-    color: var(--dark-text-primary);
-}
-
-/* Borders */
-html.dark-mode .article-header,
-html.dark-mode .related-posts,
-html.dark-mode .post-meta,
-html.dark-mode .broker-intro {
-    border-color: var(--dark-border);
-}
-
-/* Mobile navigation in dark mode */
-@media (max-width: 768px) {
-    html.dark-mode nav {
-        background: var(--dark-bg-primary);
-    }
-}
-
 /* ============================================
-   GLOBAL RESPONSIVE
+   GLOBAL RESPONSIVE (header/footer only)
    ============================================ */
 @media (max-width: 768px) {
     body {
@@ -621,6 +317,10 @@ html.dark-mode .broker-intro {
         box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
     }
     
+    html.dark-mode nav {
+        background: var(--dark-bg-primary);
+    }
+    
     nav.active {
         right: 0;
     }
@@ -648,23 +348,6 @@ html.dark-mode .broker-intro {
         font-size: 0.75rem;
     }
     
-    .section-title {
-        font-size: 1.5rem;
-    }
-    
-    .section-padding {
-        padding: 40px 0;
-    }
-    
-    .blog-cta {
-        padding: 20px;
-        margin: 30px 0;
-    }
-    
-    .blog-cta h3 {
-        font-size: 1.2rem;
-    }
-    
     footer {
         padding: 20px 0;
     }
@@ -676,12 +359,6 @@ html.dark-mode .broker-intro {
 }
 
 @media (max-width: 480px) {
-    .btn-primary,
-    .btn-outline {
-        width: 100%;
-        text-align: center;
-    }
-    
     .dark-mode-toggle span:last-child {
         display: none;
     }
