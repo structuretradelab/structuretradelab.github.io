@@ -9,7 +9,9 @@
    - Dark Mode VARIABLES & BASE DARK STYLES
    - Dark Mode Toggle Button
    - Hamburger Menu
-   - SOFT CTA (blog-cta) - appears on multiple pages
+   - SOFT CTA (blog-cta)
+   - SECTION TITLES & UTILITIES (shared across pages)
+   - BUTTONS (btn-primary, btn-outline)
    - Global Responsive (header/footer/cta)
    ============================================ */
 
@@ -205,6 +207,84 @@ footer a:hover {
 }
 
 /* ============================================
+   SECTION TITLES & UTILITIES (SHARED)
+   ============================================ */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 12px;
+    color: #0a2540;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1rem;
+    color: #4a5568;
+    margin-bottom: 40px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-padding {
+    padding: 60px 0;
+}
+
+.bg-white {
+    background: white;
+}
+
+.bg-light {
+    background: #f8f9fa;
+}
+
+.view-all {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* ============================================
+   BUTTONS (SHARED)
+   ============================================ */
+.btn-primary {
+    background: #00b4d8;
+    color: #0a2540;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #0096b8;
+    transform: translateY(-2px);
+    color: #0a2540;
+}
+
+.btn-outline {
+    border: 2px solid #00b4d8;
+    color: #0a2540;
+    padding: 10px 26px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    display: inline-block;
+    background: transparent;
+    cursor: pointer;
+}
+
+.btn-outline:hover {
+    background: #00b4d8;
+    color: #0a2540;
+    transform: translateY(-2px);
+}
+
+/* ============================================
    SOFT CTA (appears on multiple pages)
    ============================================ */
 .blog-cta {
@@ -325,6 +405,43 @@ html.dark-mode footer a {
     color: var(--dark-link);
 }
 
+/* Section titles dark mode */
+html.dark-mode .section-title {
+    color: var(--dark-text-primary);
+}
+
+html.dark-mode .section-subtitle {
+    color: var(--dark-text-secondary);
+}
+
+html.dark-mode .bg-white {
+    background: var(--dark-bg-primary);
+}
+
+html.dark-mode .bg-light {
+    background: var(--dark-bg-secondary);
+}
+
+/* Buttons dark mode */
+html.dark-mode .btn-primary {
+    background: var(--dark-link);
+    color: #0a0f1a;
+}
+
+html.dark-mode .btn-primary:hover {
+    background: var(--dark-link-hover);
+}
+
+html.dark-mode .btn-outline {
+    border-color: var(--dark-link);
+    color: var(--dark-link);
+}
+
+html.dark-mode .btn-outline:hover {
+    background: var(--dark-link);
+    color: #0a0f1a;
+}
+
 /* SOFT CTA dark mode */
 html.dark-mode .blog-cta {
     background: var(--dark-bg-card);
@@ -352,7 +469,7 @@ html.dark-mode .blog-cta .disclosure-small {
 }
 
 /* ============================================
-   GLOBAL RESPONSIVE (header/footer/cta)
+   GLOBAL RESPONSIVE (header/footer/cta/titles)
    ============================================ */
 @media (max-width: 768px) {
     body {
@@ -440,10 +557,24 @@ html.dark-mode .blog-cta .disclosure-small {
     .blog-cta h3 {
         font-size: 1.2rem;
     }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .section-padding {
+        padding: 40px 0;
+    }
 }
 
 @media (max-width: 480px) {
     .dark-mode-toggle span:last-child {
         display: none;
+    }
+    
+    .btn-primary,
+    .btn-outline {
+        width: 100%;
+        text-align: center;
     }
 }
