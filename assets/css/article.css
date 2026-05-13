@@ -2,8 +2,12 @@
    ARTICLE.CSS - Article Pages Only
    ============================================
    For: Individual blog post pages
+   Includes: Article container, content tables, 
+   code blocks, info/warning boxes, table of contents,
+   author bio, related posts, comments
    ============================================ */
 
+/* ----- ARTICLE CONTAINER ----- */
 .article-container {
     max-width: 800px;
     margin: 0 auto;
@@ -11,10 +15,19 @@
     background: white;
 }
 
+html.dark-mode .article-container {
+    background: var(--dark-bg-primary);
+}
+
+/* ----- ARTICLE HEADER ----- */
 .article-header {
     margin-bottom: 30px;
     border-bottom: 1px solid #e0e0e0;
     padding-bottom: 20px;
+}
+
+html.dark-mode .article-header {
+    border-bottom-color: var(--dark-border);
 }
 
 .article-category {
@@ -37,11 +50,28 @@
     color: #00b4d8;
 }
 
+html.dark-mode .article-category {
+    background: var(--dark-bg-elevated);
+    color: var(--dark-text-secondary);
+}
+
+html.dark-mode .article-category a {
+    color: var(--dark-text-secondary);
+}
+
+html.dark-mode .article-category a:hover {
+    color: var(--dark-link);
+}
+
 .article-title {
     font-size: 2.2rem;
     line-height: 1.3;
     color: #0a2540;
     margin-bottom: 15px;
+}
+
+html.dark-mode .article-title {
+    color: var(--dark-text-primary);
 }
 
 .article-meta {
@@ -52,6 +82,11 @@
     flex-wrap: wrap;
 }
 
+html.dark-mode .article-meta {
+    color: var(--dark-text-muted);
+}
+
+/* ----- FEATURED IMAGE ----- */
 .featured-image {
     margin: 0 0 30px 0;
     text-align: center;
@@ -66,12 +101,20 @@
     margin: 0 auto;
 }
 
+/* ============================================
+   ARTICLE CONTENT
+   ============================================ */
 .article-content {
     font-size: 1.05rem;
     line-height: 1.7;
     color: #2c3e4e;
 }
 
+html.dark-mode .article-content {
+    color: var(--dark-text-secondary);
+}
+
+/* Headings within article */
 .article-content h2 {
     font-size: 1.6rem;
     color: #0a2540;
@@ -86,15 +129,141 @@
     margin: 30px 0 12px 0;
 }
 
+.article-content h4 {
+    font-size: 1.1rem;
+    color: #0a2540;
+    margin: 25px 0 10px 0;
+}
+
+html.dark-mode .article-content h2,
+html.dark-mode .article-content h3,
+html.dark-mode .article-content h4 {
+    color: var(--dark-text-primary);
+    border-bottom-color: var(--dark-border);
+}
+
+/* Paragraphs */
 .article-content p {
     margin-bottom: 1.2em;
 }
 
+/* Lists */
 .article-content ul,
 .article-content ol {
     margin: 1em 0 1em 2em;
 }
 
+.article-content li {
+    margin-bottom: 0.5em;
+}
+
+/* Blockquotes */
+.article-content blockquote {
+    background: #f0f7fa;
+    border-left: 4px solid #00b4d8;
+    padding: 1em 1.5em;
+    margin: 1.5em 0;
+    font-style: italic;
+    color: #2c3e4e;
+    border-radius: 0 12px 12px 0;
+}
+
+html.dark-mode .article-content blockquote {
+    background: var(--dark-bg-elevated);
+    border-left-color: var(--dark-link);
+    color: var(--dark-text-secondary);
+}
+
+/* Images */
+.article-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 1.5em 0;
+}
+
+/* Inline code */
+.article-content code {
+    background: #f0f4f8;
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+html.dark-mode .article-content code {
+    background: var(--dark-bg-elevated);
+    color: var(--dark-text-primary);
+}
+
+/* Code blocks */
+.article-content pre {
+    background: #1a1a2e;
+    color: #e0e0e0;
+    padding: 1em;
+    border-radius: 12px;
+    overflow-x: auto;
+    margin: 1.5em 0;
+}
+
+.article-content pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+}
+
+html.dark-mode .article-content pre {
+    background: var(--dark-bg-primary);
+}
+
+html.dark-mode .article-content pre code {
+    color: var(--dark-text-primary);
+}
+
+/* ============================================
+   TABLES (Article specific)
+   ============================================ */
+.article-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+}
+
+.article-content th,
+.article-content td {
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    text-align: left;
+}
+
+.article-content th {
+    background: #f0f4f8;
+    font-weight: bold;
+}
+
+html.dark-mode .article-content th,
+html.dark-mode .article-content td {
+    border-color: var(--dark-border);
+    background: var(--dark-bg-secondary);
+    color: var(--dark-text-secondary);
+}
+
+html.dark-mode .article-content th {
+    background: var(--dark-bg-primary);
+    color: var(--dark-text-primary);
+}
+
+/* Horizontal rule */
+.article-content hr {
+    margin: 2em 0;
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, #e0e0e0, #00b4d8, #e0e0e0);
+}
+
+/* ============================================
+   INFO & WARNING BOXES
+   ============================================ */
 .info-box {
     background: #e8f4f8;
     border-left: 4px solid #00b4d8;
@@ -111,6 +280,19 @@
     border-radius: 0 12px 12px 0;
 }
 
+html.dark-mode .info-box {
+    background: var(--dark-bg-card);
+    border-left-color: var(--dark-link);
+}
+
+html.dark-mode .warning-box {
+    background: rgba(255, 152, 0, 0.1);
+    border-left-color: #ff9800;
+}
+
+/* ============================================
+   TABLE OF CONTENTS
+   ============================================ */
 .table-of-contents {
     background: #f8f9fa;
     padding: 20px 25px;
@@ -123,6 +305,7 @@
     margin-top: 0;
     margin-bottom: 15px;
     font-size: 1.2rem;
+    color: #0a2540;
 }
 
 .table-of-contents ul {
@@ -145,6 +328,26 @@
     text-decoration: underline;
 }
 
+html.dark-mode .table-of-contents {
+    background: var(--dark-bg-card);
+    border-color: var(--dark-border);
+}
+
+html.dark-mode .table-of-contents h3 {
+    color: var(--dark-text-primary);
+}
+
+html.dark-mode .table-of-contents a {
+    color: var(--dark-text-secondary);
+}
+
+html.dark-mode .table-of-contents a:hover {
+    color: var(--dark-link);
+}
+
+/* ============================================
+   INTERNAL LINKS
+   ============================================ */
 .internal-link {
     background: #e8f4f8;
     padding: 15px 20px;
@@ -159,6 +362,22 @@
     font-weight: bold;
 }
 
+.internal-link a:hover {
+    text-decoration: underline;
+}
+
+html.dark-mode .internal-link {
+    background: var(--dark-bg-card);
+    border-left-color: var(--dark-link);
+}
+
+html.dark-mode .internal-link a {
+    color: var(--dark-link);
+}
+
+/* ============================================
+   AUTHOR BIO
+   ============================================ */
 .author-bio {
     background: #f8f9fa;
     border-radius: 16px;
@@ -194,6 +413,26 @@
     color: #4a5568;
 }
 
+html.dark-mode .author-bio {
+    background: var(--dark-bg-card);
+    border-color: var(--dark-border);
+}
+
+html.dark-mode .author-avatar {
+    background: var(--dark-bg-elevated);
+}
+
+html.dark-mode .author-info h4 {
+    color: var(--dark-text-primary);
+}
+
+html.dark-mode .author-info p {
+    color: var(--dark-text-secondary);
+}
+
+/* ============================================
+   RELATED POSTS
+   ============================================ */
 .related-posts {
     margin: 50px 0 30px;
     padding-top: 30px;
@@ -251,96 +490,6 @@
     margin: 0;
 }
 
-.comments-section {
-    margin: 40px 0;
-    padding: 30px;
-    background: #f8f9fa;
-    border-radius: 16px;
-    text-align: center;
-    border: 1px solid #e0e0e0;
-}
-
-.comments-section p {
-    margin: 0;
-    color: #6c757d;
-}
-
-/* Dark Mode */
-html.dark-mode .article-container {
-    background: var(--dark-bg-primary);
-}
-
-html.dark-mode .article-header {
-    border-bottom-color: var(--dark-border);
-}
-
-html.dark-mode .article-category {
-    background: var(--dark-bg-elevated, #1a2332);
-    color: var(--dark-text-secondary);
-}
-
-html.dark-mode .article-category a {
-    color: var(--dark-text-secondary);
-}
-
-html.dark-mode .article-title {
-    color: var(--dark-text-primary);
-}
-
-html.dark-mode .article-meta {
-    color: var(--dark-text-muted);
-}
-
-html.dark-mode .article-content {
-    color: var(--dark-text-secondary);
-}
-
-html.dark-mode .article-content h2,
-html.dark-mode .article-content h3 {
-    color: var(--dark-text-primary);
-    border-bottom-color: var(--dark-border);
-}
-
-html.dark-mode .info-box,
-html.dark-mode .internal-link {
-    background: var(--dark-bg-card);
-    border-left-color: var(--dark-link);
-}
-
-html.dark-mode .warning-box {
-    background: rgba(255, 152, 0, 0.1);
-}
-
-html.dark-mode .table-of-contents {
-    background: var(--dark-bg-card);
-    border-color: var(--dark-border);
-}
-
-html.dark-mode .table-of-contents a {
-    color: var(--dark-text-secondary);
-}
-
-html.dark-mode .table-of-contents a:hover {
-    color: var(--dark-link);
-}
-
-html.dark-mode .author-bio {
-    background: var(--dark-bg-card);
-    border-color: var(--dark-border);
-}
-
-html.dark-mode .author-avatar {
-    background: var(--dark-bg-elevated, #1a2332);
-}
-
-html.dark-mode .author-info h4 {
-    color: var(--dark-text-primary);
-}
-
-html.dark-mode .author-info p {
-    color: var(--dark-text-secondary);
-}
-
 html.dark-mode .related-posts {
     border-top-color: var(--dark-border);
 }
@@ -359,7 +508,7 @@ html.dark-mode .related-card .category {
 }
 
 html.dark-mode .related-card h4 a {
-    color: #ffffff;
+    color: var(--dark-text-primary);
 }
 
 html.dark-mode .related-card h4 a:hover {
@@ -368,6 +517,27 @@ html.dark-mode .related-card h4 a:hover {
 
 html.dark-mode .related-card p {
     color: var(--dark-text-secondary);
+}
+
+/* ============================================
+   COMMENTS SECTION
+   ============================================ */
+.comments-section {
+    margin: 40px 0;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+.comments-section p {
+    margin: 0;
+    color: #6c757d;
+}
+
+.comments-section a {
+    color: #00b4d8;
 }
 
 html.dark-mode .comments-section {
@@ -379,7 +549,13 @@ html.dark-mode .comments-section p {
     color: var(--dark-text-muted);
 }
 
-/* Responsive */
+html.dark-mode .comments-section a {
+    color: var(--dark-link);
+}
+
+/* ============================================
+   RESPONSIVE (Article only)
+   ============================================ */
 @media (max-width: 768px) {
     .article-title {
         font-size: 1.6rem;
@@ -391,6 +567,14 @@ html.dark-mode .comments-section p {
     
     .article-content h2 {
         font-size: 1.4rem;
+    }
+    
+    .article-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .article-content h4 {
+        font-size: 1rem;
     }
     
     .author-bio {
@@ -407,5 +591,9 @@ html.dark-mode .comments-section p {
     .article-meta {
         flex-direction: column;
         gap: 5px;
+    }
+    
+    .table-of-contents {
+        padding: 15px;
     }
 }
