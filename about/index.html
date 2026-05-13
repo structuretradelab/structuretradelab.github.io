@@ -1,59 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9HB3LHNF2W"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9HB3LHNF2W');
-</script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="About Structure Trade Lab — 6+ years of forex trading experience. Meet the trader behind the lab, learn my trading philosophy, and why I created this free educational resource.">
     <title>About — Structure Trade Lab</title>
-    <link rel="stylesheet" href="https://structuretradelab.com/assets/css/style.css">
+    
+    <!-- PREVENT FLASH OF LIGHT IN DARK MODE -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.classList.add('dark-mode');
+            }
+        })();
+    </script>
+    
+    <link rel="stylesheet" href="https://structuretradelab.com/assets/css/common.css">
+    
     <style>
-        /* Additional about-page specific styles */
+        /* ============================================
+           ABOUT PAGE SPECIFIC STYLES
+           ============================================ */
+        
+        /* Hero Section */
         .about-hero {
             background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%);
             color: white;
             padding: 60px 0;
             text-align: center;
         }
+        
         .about-hero h1 {
             font-size: 2.5rem;
             margin-bottom: 15px;
+            color: white;
         }
+        
         .about-hero p {
             font-size: 1.1rem;
             max-width: 600px;
             margin: 0 auto;
             color: #cce4f0;
         }
+        
+        /* About Content Container */
         .about-content {
             max-width: 800px;
             margin: 0 auto;
             padding: 60px 20px;
+            background: white;
         }
+        
+        html.dark-mode .about-content {
+            background: var(--dark-bg-primary);
+        }
+        
+        /* Story Sections */
         .story-section {
             margin-bottom: 50px;
         }
+        
         .story-section h2 {
             color: #0a2540;
             font-size: 1.8rem;
             margin-bottom: 20px;
             text-align: left;
         }
+        
+        html.dark-mode .story-section h2 {
+            color: var(--dark-text-primary);
+        }
+        
         .story-section p {
             color: #4a5568;
             margin-bottom: 20px;
             font-size: 1.05rem;
             line-height: 1.7;
         }
+        
+        html.dark-mode .story-section p {
+            color: var(--dark-text-secondary);
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin: 50px 0;
+            text-align: center;
+        }
+        
+        .stat-card {
+            background: #f8f9fa;
+            padding: 30px 20px;
+            border-radius: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        }
+        
+        html.dark-mode .stat-card {
+            background: var(--dark-bg-card);
+            border-color: var(--dark-border);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #00b4d8;
+            display: block;
+        }
+        
+        html.dark-mode .stat-number {
+            color: var(--dark-link);
+        }
+        
+        .stat-label {
+            color: #4a5568;
+            font-size: 0.9rem;
+            margin-top: 8px;
+        }
+        
+        html.dark-mode .stat-label {
+            color: var(--dark-text-secondary);
+        }
+        
+        /* Philosophy List */
+        .philosophy-list {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 16px;
+            margin: 40px 0;
+            border-left: 4px solid #00b4d8;
+        }
+        
+        html.dark-mode .philosophy-list {
+            background: var(--dark-bg-card);
+            border-left-color: var(--dark-link);
+        }
+        
+        .philosophy-list ul {
+            margin-left: 20px;
+        }
+        
+        .philosophy-list li {
+            margin-bottom: 15px;
+            color: #4a5568;
+        }
+        
+        html.dark-mode .philosophy-list li {
+            color: var(--dark-text-secondary);
+        }
+        
+        /* Signature */
         .signature {
             font-family: 'Georgia', serif;
             font-size: 1.3rem;
@@ -63,75 +170,177 @@
             border-top: 2px solid #00b4d8;
             display: inline-block;
         }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin: 50px 0;
+        
+        html.dark-mode .signature {
+            color: var(--dark-text-primary);
+            border-top-color: var(--dark-link);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: #e8f4f8;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 50px 0 30px;
             text-align: center;
         }
-        .stat-card {
+        
+        html.dark-mode .contact-section {
+            background: var(--dark-bg-card);
+            border: 1px solid var(--dark-border);
+        }
+        
+        .contact-section h3 {
+            font-size: 1.6rem;
+            color: #0a2540;
+            margin-bottom: 12px;
+        }
+        
+        html.dark-mode .contact-section h3 {
+            color: var(--dark-text-primary);
+        }
+        
+        .contact-section p {
+            color: #4a5568;
+            margin-bottom: 8px;
+        }
+        
+        html.dark-mode .contact-section p {
+            color: var(--dark-text-secondary);
+        }
+        
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
             background: white;
-            padding: 30px 20px;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            padding: 15px 30px;
+            border-radius: 60px;
+            margin-top: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             border: 1px solid #e0e0e0;
         }
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #00b4d8;
-            display: block;
+        
+        html.dark-mode .contact-email {
+            background: var(--dark-bg-primary);
+            border-color: var(--dark-border);
         }
-        .stat-label {
-            color: #4a5568;
-            font-size: 0.9rem;
-            margin-top: 8px;
-        }
-        .philosophy-list {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 16px;
-            margin: 40px 0;
-        }
-        .philosophy-list li {
-            margin-bottom: 15px;
-            color: #4a5568;
-        }
-        .cta-box {
-            background: #0a2540;
-            color: white;
-            padding: 40px;
-            border-radius: 16px;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .cta-box h3 {
+        
+        .contact-email .email-icon {
             font-size: 1.5rem;
-            margin-bottom: 15px;
         }
-        .cta-box p {
-            margin-bottom: 20px;
-            opacity: 0.9;
+        
+        .contact-email a {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #00b4d8;
+            text-decoration: none;
         }
-        .cta-box .btn-outline {
+        
+        .contact-email a:hover {
+            text-decoration: underline;
+        }
+        
+        .copy-btn-small {
             background: transparent;
+            border: 1px solid #dce4ec;
+            border-radius: 40px;
+            padding: 6px 16px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #6c757d;
+        }
+        
+        .copy-btn-small:hover {
+            background: #00b4d8;
             border-color: #00b4d8;
             color: white;
         }
-        .cta-box .btn-outline:hover {
-            background: #00b4d8;
-            color: #0a2540;
+        
+        html.dark-mode .copy-btn-small {
+            border-color: var(--dark-border);
+            color: var(--dark-text-muted);
         }
+        
+        html.dark-mode .copy-btn-small:hover {
+            background: var(--dark-link);
+            color: #0a0f1a;
+        }
+        
+        .copy-feedback {
+            font-size: 0.7rem;
+            color: #2ecc71;
+            margin-left: 10px;
+            display: none;
+        }
+        
+        /* What Site Is NOT section */
+        .not-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .not-list li {
+            margin-bottom: 12px;
+            color: #4a5568;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        html.dark-mode .not-list li {
+            color: var(--dark-text-secondary);
+        }
+        
+        /* Responsive */
         @media (max-width: 768px) {
-            .about-hero h1 { font-size: 1.8rem; }
-            .story-section h2 { font-size: 1.5rem; }
-            .stats-grid { gap: 15px; }
-            .stat-number { font-size: 1.8rem; }
+            .about-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .story-section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .stat-number {
+                font-size: 1.8rem;
+            }
+            
+            .contact-section {
+                padding: 25px;
+            }
+            
+            .contact-section h3 {
+                font-size: 1.3rem;
+            }
+            
+            .contact-email {
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 12px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .signature {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
+
+    <!-- HEADER -->
     <header>
         <div class="container header-flex">
             <div class="logo">
@@ -140,7 +349,23 @@
                     <p>Trade with Structure. Trade with a Plan.</p>
                 </a>
             </div>
-            <nav>
+            
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <!-- Dark Mode Toggle Button -->
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Dark mode">
+                    <span class="toggle-icon">🌙</span>
+                    <span class="toggle-text">Dark</span>
+                </button>
+                
+                <!-- Hamburger Button -->
+                <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            
+            <nav id="mainNav">
                 <a href="https://structuretradelab.com">Home</a>
                 <a href="https://blog.structuretradelab.com">Blog</a>
                 <a href="https://tools.structuretradelab.com">Tools</a>
@@ -148,7 +373,12 @@
             </nav>
         </div>
     </header>
+    
+    <!-- Overlay for mobile menu -->
+    <div class="menu-overlay" id="menuOverlay"></div>
 
+
+    <!-- ABOUT HERO SECTION -->
     <section class="about-hero">
         <div class="container">
             <h1>About Structure Trade Lab</h1>
@@ -157,6 +387,7 @@
     </section>
 
     <div class="about-content">
+        
         <!-- Stats / Credibility markers -->
         <div class="stats-grid">
             <div class="stat-card">
@@ -169,11 +400,11 @@
             </div>
             <div class="stat-card">
                 <span class="stat-number">3</span>
-                <span class="stat-label">Blown Accounts (Lessons Learned)</span>
+                <span class="stat-label">Blown Accounts</span>
             </div>
             <div class="stat-card">
                 <span class="stat-number">100%</span>
-                <span class="stat-label">Transparent & No Hype</span>
+                <span class="stat-label">No Hype</span>
             </div>
         </div>
 
@@ -195,11 +426,11 @@
         <div class="story-section">
             <h2>My Trading Philosophy</h2>
             <div class="philosophy-list">
-                <ul style="margin-left: 20px;">
+                <ul>
                     <li><strong>📐 Trade with structure, not emotion</strong> — Every trade follows a plan, never a feeling.</li>
-                    <li><strong>🛡️ Risk management > everything</strong> — You can have a mediocre strategy and survive with good risk management. The opposite is not true.</li>
+                    <li><strong>🛡️ Risk management > everything</strong> — You can have a mediocre strategy and survive with good risk management.</li>
                     <li><strong>📊 Less is more</strong> — Master 1-2 pairs instead of watching 20 poorly.</li>
-                    <li><strong>🧠 Psychology is 80% of the game</strong> — Your strategy doesn't matter if you can't control fear and greed.</li>
+                    <li><strong>🧠 Psychology is 80% of the game</strong> — Strategy doesn't matter if you can't control fear and greed.</li>
                     <li><strong>📝 Journal or it didn't happen</strong> — You can't improve what you don't measure.</li>
                     <li><strong>⏳ Patience pays</strong> — The best trades are the ones you don't take.</li>
                 </ul>
@@ -221,10 +452,26 @@
         <!-- What This Site Is NOT -->
         <div class="story-section">
             <h2>What This Site Is NOT</h2>
-            <p>❌ <strong>Not a get-rich-quick scheme</strong> — Trading is hard work. Anyone promising otherwise is lying.</p>
-            <p>❌ <strong>Not a signal service</strong> — I don't tell you when to buy or sell. I teach you how to decide for yourself.</p>
-            <p>❌ <strong>Not a paid course</strong> — Everything here is free. I believe trading education should be accessible.</p>
-            <p>❌ <strong>Not financial advice</strong> — I'm a trader sharing experience, not a licensed financial advisor.</p>
+            <ul class="not-list">
+                <li>❌ <strong>Not a get-rich-quick scheme</strong> — Trading is hard work. Anyone promising otherwise is lying.</li>
+                <li>❌ <strong>Not a signal service</strong> — I don't tell you when to buy or sell. I teach you how to decide for yourself.</li>
+                <li>❌ <strong>Not a paid course</strong> — Everything here is free. I believe trading education should be accessible.</li>
+                <li>❌ <strong>Not financial advice</strong> — I'm a trader sharing experience, not a licensed financial advisor.</li>
+            </ul>
+        </div>
+
+        <!-- CONTACT SECTION -->
+        <div class="contact-section">
+            <h3>📬 Get in Touch</h3>
+            <p>Have a question, suggestion, or just want to say hello?</p>
+            <p>I read every email and do my best to respond within 48 hours.</p>
+            
+            <div class="contact-email" id="contactEmailBox">
+                <span class="email-icon">✉️</span>
+                <a href="mailto:structuretradelab@gmail.com" id="emailLink">structuretradelab@gmail.com</a>
+                <button class="copy-btn-small" id="copyEmailBtn" data-email="structuretradelab@gmail.com">Copy</button>
+                <span class="copy-feedback" id="copyFeedback">✓ Copied!</span>
+            </div>
         </div>
 
         <!-- Signature -->
@@ -234,17 +481,19 @@
         </div>
 
         <!-- CTA Box -->
-        <div class="cta-box">
-            <h3>📬 Start Your Trading Journey</h3>
+        <div class="blog-cta">
+            <h3>📌 Start Your Trading Journey</h3>
             <p>New here? Start with the Essential Guides — everything I wish I knew 6 years ago.</p>
-            <a href="https://blog.structuretradelab.com/category/essential/" class="btn-outline">Read Essential Guides →</a>
+            <a href="https://blog.structuretradelab.com/category/getting-started/" class="btn-primary">Read Essential Guides →</a>
         </div>
+
     </div>
 
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <div class="footer-disclosure">
-                <strong>Disclosure:</strong> Structure Trade Lab is an independent educational website. I am an Exness Introducing Broker (IB) and may earn commissions when you trade through links on this site. This does not affect your trading conditions or costs. I only recommend brokers I personally use and trust.
+                <strong>Disclosure:</strong> Structure Trade Lab is an independent educational website. As an Introducing Broker (IB), I may earn commissions when you trade through links on this site. This does not affect your trading conditions or costs. I only recommend brokers I personally use and trust.
             </div>
             <div class="footer-disclosure">
                 <strong>Risk Warning:</strong> Trading forex and CFDs carries a high level of risk. Past performance does not guarantee future results. The information on this site is for educational purposes only and should not be considered financial advice. Only trade with money you can afford to lose.
@@ -260,8 +509,28 @@
         </div>
     </footer>
 
+    <!-- JavaScript for Hamburger Menu & Year -->
+    <script src="https://structuretradelab.com/assets/js/common.js" defer></script>
     <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
+        // Additional about page specific JavaScript
+        (function() {
+            // Copy email functionality
+            const copyBtn = document.getElementById('copyEmailBtn');
+            const copyFeedback = document.getElementById('copyFeedback');
+            
+            if (copyBtn) {
+                copyBtn.addEventListener('click', function() {
+                    const email = this.getAttribute('data-email');
+                    navigator.clipboard.writeText(email).then(() => {
+                        copyFeedback.style.display = 'inline-block';
+                        setTimeout(() => {
+                            copyFeedback.style.display = 'none';
+                        }, 2000);
+                    });
+                });
+            }
+            
+        })();
     </script>
 </body>
 </html>
