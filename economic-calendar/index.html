@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Daily economic calendar for forex traders. Track today's high-impact news events.">
+    <title>Daily Economic Calendar | Structure Trade Lab</title>
+
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.classList.add('dark-mode');
+            }
+        })();
+    </script>
+
+    <link rel="stylesheet" href="https://structuretradelab.com/assets/css/common.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body { background: #f8f9fa; }
+        html.dark-mode body { background: var(--dark-bg-secondary, #0d1117); }
+
+        .calendar-page { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+
+        .calendar-card {
+            background: white;
+            border-radius: 24px;
+            border: 1px solid #e0e0e0;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        html.dark-mode .calendar-card {
+            background: var(--dark-bg-card, #121724);
+            border-color: var(--dark-border, #1f2a3a);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px 20px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        html.dark-mode .card-header {
+            background: var(--dark-bg-elevated, #1a2332);
+            border-bottom-color: var(--dark-border, #1f2a3a);
+        }
+
+        .card-title { display: flex; align-items: center; gap: 8px; }
+        .card-title span { font-size: 1.2rem; }
+        .card-title h2 { font-size: 1rem; font-weight: 600; color: #0a2540; margin: 0; }
+        html.dark-mode .card-title h2 { color: var(--dark-text-primary, #f0f3f8); }
+
+        .view-toggle { display: flex; gap: 6px; background: #e8ecf0; padding: 3px; border-radius: 40px; }
+        html.dark-mode .view-toggle { background: var(--dark-bg-secondary, #0d1117); }
+
+        .view-btn {
+            display: inline-block;
+            padding: 5px 16px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: transparent;
+            border: none;
+            color: #4a5568;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .view-btn.active {
+            background: #00b4d8;
+            color: #0a2540;
+            cursor: default;
+            pointer-events: none;
+        }
+        .view-btn:not(.active):hover {
+            background: rgba(0,180,216,0.15);
+            color: #0a2540;
+        }
+        html.dark-mode .view-btn { color: var(--dark-text-secondary, #c9d1d9); }
+        html.dark-mode .view-btn.active {
+            background: var(--dark-link, #58c4dd);
+            color: #0a0f1a;
+        }
+
+        .calendar-wrapper {
+            width: 100%;
+            height: 1280px;
+            overflow-y: auto;
+        }
+
+        #economicCalendarWidget { width: 100%; }
+
+        .card-footer {
+            padding: 8px 20px;
+            background: #f8f9fa;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+            font-size: 0.65rem;
+        }
+        html.dark-mode .card-footer {
+            background: var(--dark-bg-elevated, #1a2332);
+            border-top-color: var(--dark-border, #1f2a3a);
+        }
+        .card-footer a { color: #6c757d; text-decoration: none; }
+        .card-footer a:hover { text-decoration: underline; }
+        html.dark-mode .card-footer a { color: var(--dark-text-muted, #8b949e); }
+
+        .loading-spinner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 400px;
+            text-align: center;
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #e0e0e0;
+            border-top-color: #00b4d8;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .loading-spinner p { color: #6c757d; font-size: 0.9rem; }
+        html.dark-mode .loading-spinner p { color: var(--dark-text-muted, #8b949e); }
+
+        .calendar-note {
+            margin-top: 30px;
+            padding: 20px 25px;
+            background: #f8f9fa;
+            border-radius: 20px;
+            border: 1px solid #e0e0e0;
+        }
+        html.dark-mode .calendar-note {
+            background: var(--dark-bg-card, #121724);
+            border-color: var(--dark-border, #1f2a3a);
+        }
+        .calendar-note h3 { font-size: 1rem; margin-bottom: 12px; color: #0a2540; }
+        html.dark-mode .calendar-note h3 { color: var(--dark-text-primary, #f0f3f8); }
+
+        .note-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        .note-item { padding: 8px; border-left: 3px solid; }
+        .note-item.high { border-left-color: #ef5350; }
+        .note-item.medium { border-left-color: #ff9800; }
+        .note-item.low { border-left-color: #4caf50; }
+        .note-item strong { display: block; margin-bottom: 4px; font-size: 0.75rem; color: #0a2540; }
+        html.dark-mode .note-item strong { color: var(--dark-text-primary, #f0f3f8); }
+        .note-item p { font-size: 0.7rem; color: #4a5568; margin: 0; }
+        html.dark-mode .note-item p { color: var(--dark-text-secondary, #c9d1d9); }
+        .note-tip {
+            margin-top: 12px;
+            padding-top: 10px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 0.7rem;
+            text-align: center;
+            color: #00b4d8;
+        }
+        html.dark-mode .note-tip { border-top-color: var(--dark-border, #1f2a3a); }
+
+        .back-link { text-align: center; margin-top: 30px; }
+        .back-link .btn-outline {
+            display: inline-block;
+            padding: 8px 20px;
+            border: 2px solid #00b4d8;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #0a2540;
+            background: transparent;
+            transition: all 0.3s;
+        }
+        .back-link .btn-outline:hover { background: #00b4d8; color: #0a2540; transform: translateY(-2px); }
+        html.dark-mode .back-link .btn-outline { color: var(--dark-link, #58c4dd); border-color: var(--dark-link, #58c4dd); }
+        html.dark-mode .back-link .btn-outline:hover { background: var(--dark-link, #58c4dd); color: #0a0f1a; }
+
+        @media (max-width: 768px) {
+            .calendar-page { padding: 20px 15px; }
+            .card-header { flex-direction: column; text-align: center; }
+            .note-grid { grid-template-columns: 1fr; gap: 10px; }
+            .calendar-wrapper { height: 800px; }
+            .view-btn { padding: 4px 14px; font-size: 0.7rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-flex">
+            <div class="logo">
+                <a href="https://structuretradelab.com">
+                    <h1>📊 Structure Trade Lab</h1>
+                    <p>Trade with Structure. Trade with a Plan.</p>
+                </a>
+            </div>
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Dark mode">
+                    <span class="toggle-icon">🌙</span>
+                    <span class="toggle-text">Dark</span>
+                </button>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <nav id="mainNav">
+                <a href="/">Home</a>
+                <a href="https://blog.structuretradelab.com">Blog</a>
+                <a href="https://tools.structuretradelab.com">Tools</a>
+                <a href="/economic-calendar" class="active">calendar</a>
+                <a href="/about">About</a>
+            </nav>
+        </div>
+    </header>
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <div class="calendar-page">
+        <div class="calendar-card">
+            <div class="card-header">
+                <div class="card-title">
+                    <span>📆</span>
+                    <h2>Economic Calendar</h2>
+                </div>
+                <div class="view-toggle">
+                    <button class="view-btn active" id="dayViewBtn">Day View</button>
+                    <button class="view-btn" id="weekViewBtn">Week View</button>
+                </div>
+            </div>
+
+            <div class="calendar-wrapper">
+                <div id="loadingSpinner" class="loading-spinner">
+                    <div class="spinner"></div>
+                    <p>Loading economic calendar...</p>
+                </div>
+                <div id="economicCalendarWidget"></div>
+            </div>
+
+            <div class="card-footer">
+                <a href="https://www.mql5.com/?utm_source=calendar.widget&utm_medium=link&utm_term=economic.calendar&utm_content=visit.mql5.calendar&utm_campaign=202.calendar.widget" target="_blank" rel="noopener nofollow">Data by MQL5 Algo Trading Community</a>
+            </div>
+        </div>
+
+        <div class="calendar-note">
+            <h3>💡 How to Use This Calendar</h3>
+            <div class="note-grid">
+                <div class="note-item high"><strong>🔴 High Impact</strong><p>Expect high volatility. Consider reducing position size 15 min before/after.</p></div>
+                <div class="note-item medium"><strong>🟠 Medium Impact</strong><p>May cause moderate price movements. Be aware of scheduled releases.</p></div>
+                <div class="note-item low"><strong>🟡 Low Impact</strong><p>Usually minor market reaction. Normal trading is typically fine.</p></div>
+            </div>
+            <p class="note-tip">📌 All times shown in your local timezone. Click on any event for details and historical data.</p>
+        </div>
+
+        <div class="back-link">
+            <a href="https://tools.structuretradelab.com" class="btn-outline">← Back to All Tools</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-disclosure">
+                <strong>Disclosure:</strong> Structure Trade Lab is an independent educational website. As an Introducing Broker (IB), I may earn commissions when you trade through links on this site. This does not affect your trading conditions or costs.
+            </div>
+            <div class="footer-disclosure">
+                <strong>Risk Warning:</strong> Trading forex and CFDs carries a high level of risk. Past performance does not guarantee future results. Only trade with money you can afford to lose.
+            </div>
+            <p>© <span id="current-year"></span> Structure Trade Lab. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/">Home</a> | 
+                <a href="https://blog.structuretradelab.com">Blog</a> | 
+                <a href="https://tools.structuretradelab.com">Tools</a> |
+                <a href="/about">About</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://structuretradelab.com/assets/js/common.js" defer></script>
+
+    <script>
+        // Navigation buttons
+        document.getElementById('dayViewBtn').addEventListener('click', function() {
+            window.location.href = '/economic-calendar-day';
+        });
+        document.getElementById('weekViewBtn').addEventListener('click', function() {
+            window.location.href = '/economic-calendar/weekly';
+        });
+
+        const MODE = '1';
+        const isDarkMode = document.documentElement.classList.contains('dark-mode');
+
+        function loadCalendar() {
+            const container = document.getElementById('economicCalendarWidget');
+            const spinner = document.getElementById('loadingSpinner');
+
+            if (!container) return;
+
+            container.innerHTML = '';
+            spinner.style.display = 'flex';
+
+            const script = document.createElement('script');
+            script.async = true;
+            script.type = 'text/javascript';
+            script.setAttribute('data-type', 'calendar-widget');
+            script.src = 'https://www.tradays.com/c/js/widgets/calendar/widget.js?v=' + Date.now();
+            
+            const config = {
+                width: "100%",
+                height: "1280",
+                mode: MODE,
+                fw: "html"
+            };
+            
+            if (isDarkMode) {
+                config.theme = 1;
+            }
+            
+            script.textContent = JSON.stringify(config);
+
+            script.onload = function() {
+                setTimeout(function() {
+                    spinner.style.display = 'none';
+                }, 500);
+            };
+
+            script.onerror = function() {
+                spinner.innerHTML = '<p style="color: #ef5350;">❌ Failed to load calendar. Please refresh the page.</p>';
+            };
+
+            document.body.appendChild(script);
+        }
+
+        const darkToggle = document.getElementById('darkModeToggle');
+        if (darkToggle) {
+            darkToggle.addEventListener('click', function() {
+                setTimeout(function() { location.reload(); }, 100);
+            });
+        }
+
+        loadCalendar();
+
+        const yearSpan = document.getElementById('current-year');
+        if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
