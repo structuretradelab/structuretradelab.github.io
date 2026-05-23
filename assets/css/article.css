@@ -272,6 +272,12 @@ html.dark-mode .article-content th {
     border-radius: 0 12px 12px 0;
 }
 
+.info-box.plain {
+    border-left: none;
+    border-radius:12px;
+    text-align: center;
+}
+
 .warning-box {
     background: #fff3e0;
     border-left: 4px solid #ff9800;
