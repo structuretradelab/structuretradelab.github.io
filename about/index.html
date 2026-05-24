@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About Structure Trade Lab — 6+ years of forex trading. Still learning. Sharing what works (and what doesn't). No guru status.">
+    <meta name="description"
+        content="About Structure Trade Lab — 6+ years of forex trading. Still learning. Sharing what works (and what doesn't). No guru status.">
     <title>About — Structure Trade Lab</title>
-    
+
     <script>
-        (function() {
+        (function () {
             const savedTheme = localStorage.getItem('theme');
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
@@ -15,9 +17,9 @@
             }
         })();
     </script>
-    
+
     <link rel="stylesheet" href="https://structuretradelab.com/assets/css/common.css">
-    
+
     <style>
         .about-hero {
             background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%);
@@ -25,61 +27,65 @@
             padding: 50px 0;
             text-align: center;
         }
-        
+
         .about-hero h1 {
             font-size: 2.2rem;
             margin-bottom: 10px;
             color: white;
         }
-        
+
         .about-hero p {
             font-size: 1rem;
             max-width: 600px;
             margin: 0 auto;
             color: #cce4f0;
         }
-        
+
         .about-content {
             max-width: 750px;
             margin: 0 auto;
             padding: 50px 20px;
             background: white;
         }
-        
+
+        html.dark-mode .about-hero {
+            background: linear-gradient(135deg, #0a0f1a 0%, #0d1f2d 100%);
+        }
+
         html.dark-mode .about-content {
             background: var(--dark-bg-primary);
         }
-        
+
         .about-section {
             margin-bottom: 40px;
         }
-        
+
         .about-section h2 {
             font-size: 1.5rem;
             margin-bottom: 15px;
             color: #0a2540;
         }
-        
+
         html.dark-mode .about-section h2 {
             color: var(--dark-text-primary);
         }
-        
+
         .about-section p {
             color: #4a5568;
             margin-bottom: 16px;
             line-height: 1.7;
         }
-        
+
         html.dark-mode .about-section p {
             color: var(--dark-text-secondary);
         }
-        
+
         .simple-list {
             list-style: none;
             padding: 0;
             margin: 20px 0;
         }
-        
+
         .simple-list li {
             margin-bottom: 12px;
             color: #4a5568;
@@ -87,11 +93,11 @@
             align-items: center;
             gap: 10px;
         }
-        
+
         html.dark-mode .simple-list li {
             color: var(--dark-text-secondary);
         }
-        
+
         .contact-section {
             background: #f8f9fa;
             border-radius: 16px;
@@ -99,21 +105,21 @@
             margin: 40px 0;
             text-align: center;
         }
-        
+
         html.dark-mode .contact-section {
             background: var(--dark-bg-card);
             border: 1px solid var(--dark-border);
         }
-        
+
         .contact-section h3 {
             margin-bottom: 10px;
             color: #0a2540;
         }
-        
+
         html.dark-mode .contact-section h3 {
             color: var(--dark-text-primary);
         }
-        
+
         .contact-email {
             display: inline-flex;
             align-items: center;
@@ -124,17 +130,17 @@
             margin-top: 15px;
             border: 1px solid #e0e0e0;
         }
-        
+
         html.dark-mode .contact-email {
             background: var(--dark-bg-primary);
             border-color: var(--dark-border);
         }
-        
+
         .contact-email a {
             color: #00b4d8;
             text-decoration: none;
         }
-        
+
         .signature {
             font-family: 'Georgia', serif;
             font-size: 1.1rem;
@@ -143,21 +149,21 @@
             padding-top: 20px;
             border-top: 1px solid #e0e0e0;
         }
-        
+
         html.dark-mode .signature {
             color: var(--dark-text-primary);
             border-top-color: var(--dark-border);
         }
-        
+
         @media (max-width: 768px) {
             .about-hero h1 {
                 font-size: 1.6rem;
             }
-            
+
             .about-content {
                 padding: 30px 15px;
             }
-            
+
             .contact-email {
                 flex-wrap: wrap;
                 justify-content: center;
@@ -165,6 +171,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- HEADER (same as main site) -->
@@ -176,7 +183,7 @@
                     <p>Trade with Structure. Trade with a Plan.</p>
                 </a>
             </div>
-            
+
             <div style="display: flex; align-items: center; gap: 15px;">
                 <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Dark mode">
                     <span class="toggle-icon">🌙</span>
@@ -188,7 +195,7 @@
                     <span></span>
                 </button>
             </div>
-            
+
             <nav id="mainNav">
                 <a href="/">Home</a>
                 <a href="https://blog.structuretradelab.com">Blog</a>
@@ -198,7 +205,7 @@
             </nav>
         </div>
     </header>
-    
+
     <div class="menu-overlay" id="menuOverlay"></div>
 
     <!-- ABOUT HERO -->
@@ -210,28 +217,34 @@
     </section>
 
     <div class="about-content">
-        
+
         <!-- Main story - humble -->
         <div class="about-section">
-            <p><strong>I started trading in 2019.</strong> Like most beginners, I made every mistake possible — over-leveraging, revenge trading, chasing losses, trusting YouTube gurus with rented Lamborghinis.</p>
-            
+            <p><strong>I started trading in 2019.</strong> Like most beginners, I made every mistake possible —
+                over-leveraging, revenge trading, chasing losses, trusting YouTube gurus with rented Lamborghinis.</p>
+
             <p>I blew up accounts. Lost money I shouldn't have risked. Almost quit multiple times.</p>
-            
-            <p>Then I got serious. Started journaling every trade. Studied risk management. Learned to control my emotions. Slowly, painfully, got better.</p>
-            
-            <p><strong>6+ years later, I'm still learning.</strong> This site is where I share what I've learned so far — no guru status, no paid courses, no get-rich-quick promises. Just honest notes from someone who's felt the fear, fought the greed, and sat through the red days.</p>
+
+            <p>Then I got serious. Started journaling every trade. Studied risk management. Learned to control my
+                emotions. Slowly, painfully, got better.</p>
+
+            <p><strong>6+ years later, I'm still learning.</strong> This site is where I share what I've learned so far
+                — no guru status, no paid courses, no get-rich-quick promises. Just honest notes from someone who's felt
+                the fear, fought the greed, and sat through the red days.</p>
         </div>
-        
+
         <!-- What's here - simple -->
         <div class="about-section">
             <h2>What You'll Find Here</h2>
             <ul class="simple-list">
-                <li>📝 <strong>Blog</strong> — Articles on leverage, risk, position sizing, psychology. Written as I learn.</li>
+                <li>📝 <strong>Blog</strong> — Articles on leverage, risk, position sizing, psychology. Written as I
+                    learn.</li>
                 <li>🔧 <strong>Free tools</strong> — Calculators built for traders. No email required.</li>
-                <li>💬 <strong>Honest broker info</strong> — Who I use, why, and full disclosure about affiliate links.</li>
+                <li>💬 <strong>Honest broker info</strong> — Who I use, why, and full disclosure about affiliate links.
+                </li>
             </ul>
         </div>
-        
+
         <!-- Contact - accessible -->
         <div class="contact-section">
             <h3>📬 Questions or feedback?</h3>
@@ -241,36 +254,40 @@
                 <a href="mailto:structuretradelab@gmail.com">structuretradelab@gmail.com</a>
             </div>
         </div>
-        
+
         <!-- Signature - humble -->
         <div class="signature">
             — A trader who's still learning,<br>
             sharing as I go.
         </div>
-        
+
         <!-- CTA -->
         <div class="blog-cta">
             <h3>📌 Start Here</h3>
             <p>New to trading? Start with the beginner's guide.</p>
-            <a href="https://blog.structuretradelab.com/category/getting-started/" class="btn-primary">Getting Started →</a>
+            <a href="https://blog.structuretradelab.com/category/getting-started/" class="btn-primary">Getting Started
+                →</a>
         </div>
-        
+
     </div>
 
     <!-- FOOTER (same as main site) -->
     <footer>
         <div class="container">
             <div class="footer-disclosure">
-                <strong>Disclosure:</strong> Structure Trade Lab is an independent educational website. As an Introducing Broker (IB), I may earn commissions when you trade through links on this site. This does not affect your trading conditions or costs.
+                <strong>Disclosure:</strong> Structure Trade Lab is an independent educational website. As an
+                Introducing Broker (IB), I may earn commissions when you trade through links on this site. This does not
+                affect your trading conditions or costs.
             </div>
             <div class="footer-disclosure">
-                <strong>Risk Warning:</strong> Trading forex and CFDs carries a high level of risk. Only trade with money you can afford to lose.
+                <strong>Risk Warning:</strong> Trading forex and CFDs carries a high level of risk. Only trade with
+                money you can afford to lose.
             </div>
             <p>© <span id="current-year"></span> Structure Trade Lab. All rights reserved.</p>
             <p style="margin-top: 10px;">
-                <a href="/">Home</a> | 
-                <a href="https://blog.structuretradelab.com">Blog</a> | 
-                <a href="https://tools.structuretradelab.com">Tools</a> | 
+                <a href="/">Home</a> |
+                <a href="https://blog.structuretradelab.com">Blog</a> |
+                <a href="https://tools.structuretradelab.com">Tools</a> |
                 <a href="/about">About</a>
             </p>
         </div>
@@ -278,4 +295,5 @@
 
     <script src="https://structuretradelab.com/assets/js/common.js" defer></script>
 </body>
+
 </html>
