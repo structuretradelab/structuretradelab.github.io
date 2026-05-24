@@ -8,18 +8,18 @@
 .hero {
     background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%);
     color: white;
-    padding: 80px 0;
+    padding: 40px 0;
     text-align: center;
 }
 
 .hero h1 {
-    font-size: 2.8rem;
-    margin-bottom: 20px;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
     color: white;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     max-width: 700px;
     margin: 0 auto 30px;
     color: #cce4f0;
@@ -100,51 +100,6 @@ html.dark-mode .pillar-link {
     color: var(--dark-link);
 }
 
-/* ----- TRUST GRID ----- */
-.trust-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    text-align: center;
-}
-
-.trust-item {
-    padding: 20px;
-}
-
-.trust-number {
-    display: block;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #00b4d8;
-    margin-bottom: 8px;
-}
-
-html.dark-mode .trust-number {
-    color: var(--dark-link);
-}
-
-.trust-label {
-    display: block;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #0a2540;
-    margin-bottom: 5px;
-}
-
-html.dark-mode .trust-label {
-    color: var(--dark-text-primary);
-}
-
-.trust-desc {
-    display: block;
-    font-size: 0.8rem;
-    color: #6c757d;
-}
-
-html.dark-mode .trust-desc {
-    color: var(--dark-text-muted);
-}
 
 /* ----- TOPICS GRID ----- */
 .topics-grid {
@@ -373,7 +328,6 @@ html.dark-mode .recent-card .read-more {
 /* ----- RESPONSIVE ----- */
 @media (max-width: 1000px) {
     .three-pillars,
-    .trust-grid,
     .topics-grid,
     .recent-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -402,12 +356,9 @@ html.dark-mode .recent-card .read-more {
     }
     
     .hero {
-        padding: 60px 0;
+        padding: 40px 0;
     }
     
-    .trust-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 @media (max-width: 700px) {
@@ -423,13 +374,6 @@ html.dark-mode .recent-card .read-more {
     
     .featured-tool-content h2 {
         font-size: 1.4rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .trust-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
     }
 }
 

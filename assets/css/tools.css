@@ -7,13 +7,13 @@
 .tools-hero {
     background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%);
     color: white;
-    padding: 60px 0;
+    padding: 40px 0;
     text-align: center;
 }
 
 .tools-hero h1 {
     font-size: 2.2rem;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     color: white;
 }
 

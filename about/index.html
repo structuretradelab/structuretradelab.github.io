@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About Structure Trade Lab — 6+ years of forex trading experience. Meet the trader behind the lab, learn my trading philosophy, and why I created this free educational resource.">
+    <meta name="description" content="About Structure Trade Lab — 6+ years of forex trading. Still learning. Sharing what works (and what doesn't). No guru status.">
     <title>About — Structure Trade Lab</title>
     
-    <!-- PREVENT FLASH OF LIGHT IN DARK MODE -->
     <script>
         (function() {
             const savedTheme = localStorage.getItem('theme');
@@ -21,36 +19,30 @@
     <link rel="stylesheet" href="https://structuretradelab.com/assets/css/common.css">
     
     <style>
-        /* ============================================
-           ABOUT PAGE SPECIFIC STYLES
-           ============================================ */
-        
-        /* Hero Section */
         .about-hero {
             background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%);
             color: white;
-            padding: 60px 0;
+            padding: 50px 0;
             text-align: center;
         }
         
         .about-hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
             color: white;
         }
         
         .about-hero p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             max-width: 600px;
             margin: 0 auto;
             color: #cce4f0;
         }
         
-        /* About Content Container */
         .about-content {
-            max-width: 800px;
+            max-width: 750px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 50px 20px;
             background: white;
         }
         
@@ -58,130 +50,53 @@
             background: var(--dark-bg-primary);
         }
         
-        /* Story Sections */
-        .story-section {
-            margin-bottom: 50px;
+        .about-section {
+            margin-bottom: 40px;
         }
         
-        .story-section h2 {
+        .about-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
             color: #0a2540;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            text-align: left;
         }
         
-        html.dark-mode .story-section h2 {
+        html.dark-mode .about-section h2 {
             color: var(--dark-text-primary);
         }
         
-        .story-section p {
+        .about-section p {
             color: #4a5568;
-            margin-bottom: 20px;
-            font-size: 1.05rem;
+            margin-bottom: 16px;
             line-height: 1.7;
         }
         
-        html.dark-mode .story-section p {
+        html.dark-mode .about-section p {
             color: var(--dark-text-secondary);
         }
         
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            margin: 50px 0;
-            text-align: center;
+        .simple-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
         }
         
-        .stat-card {
-            background: #f8f9fa;
-            padding: 30px 20px;
-            border-radius: 16px;
-            transition: transform 0.2s, box-shadow 0.2s;
-            border: 1px solid #e0e0e0;
-        }
-        
-        .stat-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-        }
-        
-        html.dark-mode .stat-card {
-            background: var(--dark-bg-card);
-            border-color: var(--dark-border);
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #00b4d8;
-            display: block;
-        }
-        
-        html.dark-mode .stat-number {
-            color: var(--dark-link);
-        }
-        
-        .stat-label {
+        .simple-list li {
+            margin-bottom: 12px;
             color: #4a5568;
-            font-size: 0.9rem;
-            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
-        html.dark-mode .stat-label {
+        html.dark-mode .simple-list li {
             color: var(--dark-text-secondary);
         }
         
-        /* Philosophy List */
-        .philosophy-list {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 16px;
-            margin: 40px 0;
-            border-left: 4px solid #00b4d8;
-        }
-        
-        html.dark-mode .philosophy-list {
-            background: var(--dark-bg-card);
-            border-left-color: var(--dark-link);
-        }
-        
-        .philosophy-list ul {
-            margin-left: 20px;
-        }
-        
-        .philosophy-list li {
-            margin-bottom: 15px;
-            color: #4a5568;
-        }
-        
-        html.dark-mode .philosophy-list li {
-            color: var(--dark-text-secondary);
-        }
-        
-        /* Signature */
-        .signature {
-            font-family: 'Georgia', serif;
-            font-size: 1.3rem;
-            color: #0a2540;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 2px solid #00b4d8;
-            display: inline-block;
-        }
-        
-        html.dark-mode .signature {
-            color: var(--dark-text-primary);
-            border-top-color: var(--dark-link);
-        }
-        
-        /* Contact Section */
         .contact-section {
-            background: #e8f4f8;
-            border-radius: 20px;
-            padding: 40px;
-            margin: 50px 0 30px;
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 40px 0;
             text-align: center;
         }
         
@@ -191,22 +106,12 @@
         }
         
         .contact-section h3 {
-            font-size: 1.6rem;
+            margin-bottom: 10px;
             color: #0a2540;
-            margin-bottom: 12px;
         }
         
         html.dark-mode .contact-section h3 {
             color: var(--dark-text-primary);
-        }
-        
-        .contact-section p {
-            color: #4a5568;
-            margin-bottom: 8px;
-        }
-        
-        html.dark-mode .contact-section p {
-            color: var(--dark-text-secondary);
         }
         
         .contact-email {
@@ -214,10 +119,9 @@
             align-items: center;
             gap: 12px;
             background: white;
-            padding: 15px 30px;
+            padding: 12px 24px;
             border-radius: 60px;
-            margin-top: 20px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            margin-top: 15px;
             border: 1px solid #e0e0e0;
         }
         
@@ -226,121 +130,44 @@
             border-color: var(--dark-border);
         }
         
-        .contact-email .email-icon {
-            font-size: 1.5rem;
-        }
-        
         .contact-email a {
-            font-size: 1.1rem;
-            font-weight: 500;
             color: #00b4d8;
             text-decoration: none;
         }
         
-        .contact-email a:hover {
-            text-decoration: underline;
+        .signature {
+            font-family: 'Georgia', serif;
+            font-size: 1.1rem;
+            color: #0a2540;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
         }
         
-        .copy-btn-small {
-            background: transparent;
-            border: 1px solid #dce4ec;
-            border-radius: 40px;
-            padding: 6px 16px;
-            font-size: 0.75rem;
-            cursor: pointer;
-            transition: all 0.2s;
-            color: #6c757d;
+        html.dark-mode .signature {
+            color: var(--dark-text-primary);
+            border-top-color: var(--dark-border);
         }
         
-        .copy-btn-small:hover {
-            background: #00b4d8;
-            border-color: #00b4d8;
-            color: white;
-        }
-        
-        html.dark-mode .copy-btn-small {
-            border-color: var(--dark-border);
-            color: var(--dark-text-muted);
-        }
-        
-        html.dark-mode .copy-btn-small:hover {
-            background: var(--dark-link);
-            color: #0a0f1a;
-        }
-        
-        .copy-feedback {
-            font-size: 0.7rem;
-            color: #2ecc71;
-            margin-left: 10px;
-            display: none;
-        }
-        
-        /* What Site Is NOT section */
-        .not-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .not-list li {
-            margin-bottom: 12px;
-            color: #4a5568;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        html.dark-mode .not-list li {
-            color: var(--dark-text-secondary);
-        }
-        
-        /* Responsive */
         @media (max-width: 768px) {
             .about-hero h1 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
             
-            .story-section h2 {
-                font-size: 1.5rem;
-            }
-            
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-            
-            .stat-number {
-                font-size: 1.8rem;
-            }
-            
-            .contact-section {
-                padding: 25px;
-            }
-            
-            .contact-section h3 {
-                font-size: 1.3rem;
+            .about-content {
+                padding: 30px 15px;
             }
             
             .contact-email {
                 flex-wrap: wrap;
                 justify-content: center;
-                padding: 12px 20px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .signature {
-                font-size: 1rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
+    <!-- HEADER (same as main site) -->
     <header>
         <div class="container header-flex">
             <div class="logo">
@@ -351,13 +178,10 @@
             </div>
             
             <div style="display: flex; align-items: center; gap: 15px;">
-                <!-- Dark Mode Toggle Button -->
                 <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Dark mode">
                     <span class="toggle-icon">🌙</span>
                     <span class="toggle-text">Dark</span>
                 </button>
-                
-                <!-- Hamburger Button -->
                 <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
                     <span></span>
                     <span></span>
@@ -369,169 +193,89 @@
                 <a href="/">Home</a>
                 <a href="https://blog.structuretradelab.com">Blog</a>
                 <a href="https://tools.structuretradelab.com">Tools</a>
-                <a href="/economic-calendar">calendar</a>
+                <a href="/economic-calendar">Calendar</a>
                 <a href="/about" class="active">About</a>
             </nav>
         </div>
     </header>
     
-    <!-- Overlay for mobile menu -->
     <div class="menu-overlay" id="menuOverlay"></div>
 
-
-    <!-- ABOUT HERO SECTION -->
+    <!-- ABOUT HERO -->
     <section class="about-hero">
         <div class="container">
-            <h1>About Structure Trade Lab</h1>
-            <p>Honest forex education from someone who's been in the trenches for 6+ years</p>
+            <h1>About This Site</h1>
+            <p>6+ years trading. Still learning every day.</p>
         </div>
     </section>
 
     <div class="about-content">
         
-        <!-- Stats / Credibility markers -->
-        <div class="stats-grid">
-            <div class="stat-card">
-                <span class="stat-number">6+</span>
-                <span class="stat-label">Years Trading</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-number">10,000+</span>
-                <span class="stat-label">Trades Analyzed</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-number">3</span>
-                <span class="stat-label">Blown Accounts</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-number">100%</span>
-                <span class="stat-label">No Hype</span>
-            </div>
+        <!-- Main story - humble -->
+        <div class="about-section">
+            <p><strong>I started trading in 2019.</strong> Like most beginners, I made every mistake possible — over-leveraging, revenge trading, chasing losses, trusting YouTube gurus with rented Lamborghinis.</p>
+            
+            <p>I blew up accounts. Lost money I shouldn't have risked. Almost quit multiple times.</p>
+            
+            <p>Then I got serious. Started journaling every trade. Studied risk management. Learned to control my emotions. Slowly, painfully, got better.</p>
+            
+            <p><strong>6+ years later, I'm still learning.</strong> This site is where I share what I've learned so far — no guru status, no paid courses, no get-rich-quick promises. Just honest notes from someone who's felt the fear, fought the greed, and sat through the red days.</p>
         </div>
-
-        <!-- Main Story -->
-        <div class="story-section">
-            <h2>My Story — Why I Built This</h2>
-            <p>I started trading forex in 2019 with absolutely no idea what I was doing. I had watched a few YouTube videos, saw someone flashing a rented Lamborghini, and thought, "I can do that." Spoiler alert: I couldn't.</p>
-            
-            <p>My first year was a disaster. I blew up two accounts within months. I was over-leveraging, revenge trading, chasing losses, and trusting "gurus" who promised guaranteed profits. I lost thousands of dollars before I realized that everything I thought I knew was wrong.</p>
-            
-            <p>So I started over. I went back to demo trading. I read every reputable book I could find. I studied market structure, risk management, and trading psychology. I journaled every single trade for two years. Slowly, painfully, I started to get better.</p>
-            
-            <p>By year three, I stopped losing money. By year four, I became consistently profitable. Now, after six years of screen time and tens of thousands of trades, I've developed a systematic approach based on market structure and strict risk management.</p>
-            
-            <p><strong>Structure Trade Lab is where I share what actually works.</strong> No courses. No get-rich-quick schemes. No paid signals. Just honest education from someone who learned the hard way — so you don't have to.</p>
-        </div>
-
-        <!-- Trading Philosophy -->
-        <div class="story-section">
-            <h2>My Trading Philosophy</h2>
-            <div class="philosophy-list">
-                <ul>
-                    <li><strong>📐 Trade with structure, not emotion</strong> — Every trade follows a plan, never a feeling.</li>
-                    <li><strong>🛡️ Risk management > everything</strong> — You can have a mediocre strategy and survive with good risk management.</li>
-                    <li><strong>📊 Less is more</strong> — Master 1-2 pairs instead of watching 20 poorly.</li>
-                    <li><strong>🧠 Psychology is 80% of the game</strong> — Strategy doesn't matter if you can't control fear and greed.</li>
-                    <li><strong>📝 Journal or it didn't happen</strong> — You can't improve what you don't measure.</li>
-                    <li><strong>⏳ Patience pays</strong> — The best trades are the ones you don't take.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- What This Site Offers -->
-        <div class="story-section">
+        
+        <!-- What's here - simple -->
+        <div class="about-section">
             <h2>What You'll Find Here</h2>
-            <p><strong>📝 Blog —</strong> In-depth articles on leverage, position sizing, risk management, trading psychology, and common mistakes. Updated weekly with real lessons from live trading.</p>
-            
-            <p><strong>🔧 Free Tools —</strong> Position size calculators, trading journals, and risk analyzers. Built by a trader, for traders. 100% free, no catch, no email required.</p>
-            
-            <p><strong>🎓 Essential Guides —</strong> Structured learning paths for beginners. Everything you need to know before placing your first trade.</p>
-            
-            <p><strong>💬 Honest Broker Info —</strong> I share the brokers I personally use (including Exness) with full transparency about affiliate relationships.</p>
-        </div>
-
-        <!-- What This Site Is NOT -->
-        <div class="story-section">
-            <h2>What This Site Is NOT</h2>
-            <ul class="not-list">
-                <li>❌ <strong>Not a get-rich-quick scheme</strong> — Trading is hard work. Anyone promising otherwise is lying.</li>
-                <li>❌ <strong>Not a signal service</strong> — I don't tell you when to buy or sell. I teach you how to decide for yourself.</li>
-                <li>❌ <strong>Not a paid course</strong> — Everything here is free. I believe trading education should be accessible.</li>
-                <li>❌ <strong>Not financial advice</strong> — I'm a trader sharing experience, not a licensed financial advisor.</li>
+            <ul class="simple-list">
+                <li>📝 <strong>Blog</strong> — Articles on leverage, risk, position sizing, psychology. Written as I learn.</li>
+                <li>🔧 <strong>Free tools</strong> — Calculators built for traders. No email required.</li>
+                <li>💬 <strong>Honest broker info</strong> — Who I use, why, and full disclosure about affiliate links.</li>
             </ul>
         </div>
-
-        <!-- CONTACT SECTION -->
+        
+        <!-- Contact - accessible -->
         <div class="contact-section">
-            <h3>📬 Get in Touch</h3>
-            <p>Have a question, suggestion, or just want to say hello?</p>
-            <p>I read every email and do my best to respond within 48 hours.</p>
-            
-            <div class="contact-email" id="contactEmailBox">
-                <span class="email-icon">✉️</span>
-                <a href="mailto:structuretradelab@gmail.com" id="emailLink">structuretradelab@gmail.com</a>
-                <button class="copy-btn-small" id="copyEmailBtn" data-email="structuretradelab@gmail.com">Copy</button>
-                <span class="copy-feedback" id="copyFeedback">✓ Copied!</span>
+            <h3>📬 Questions or feedback?</h3>
+            <p>I read every email. Happy to help if I can.</p>
+            <div class="contact-email">
+                <span>✉️</span>
+                <a href="mailto:structuretradelab@gmail.com">structuretradelab@gmail.com</a>
             </div>
         </div>
-
-        <!-- Signature -->
+        
+        <!-- Signature - humble -->
         <div class="signature">
-            — A trader who learned the hard way<br>
-            so you don't have to.
+            — A trader who's still learning,<br>
+            sharing as I go.
         </div>
-
-        <!-- CTA Box -->
+        
+        <!-- CTA -->
         <div class="blog-cta">
-            <h3>📌 Start Your Trading Journey</h3>
-            <p>New here? Start with the Essential Guides — everything I wish I knew 6 years ago.</p>
-            <a href="https://blog.structuretradelab.com/category/getting-started/" class="btn-primary">Read Essential Guides →</a>
+            <h3>📌 Start Here</h3>
+            <p>New to trading? Start with the beginner's guide.</p>
+            <a href="https://blog.structuretradelab.com/category/getting-started/" class="btn-primary">Getting Started →</a>
         </div>
-
+        
     </div>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (same as main site) -->
     <footer>
         <div class="container">
             <div class="footer-disclosure">
-                <strong>Disclosure:</strong> Structure Trade Lab is an independent educational website. As an Introducing Broker (IB), I may earn commissions when you trade through links on this site. This does not affect your trading conditions or costs. I only recommend brokers I personally use and trust.
+                <strong>Disclosure:</strong> Structure Trade Lab is an independent educational website. As an Introducing Broker (IB), I may earn commissions when you trade through links on this site. This does not affect your trading conditions or costs.
             </div>
             <div class="footer-disclosure">
-                <strong>Risk Warning:</strong> Trading forex and CFDs carries a high level of risk. Past performance does not guarantee future results. Only trade with money you can afford to lose.
+                <strong>Risk Warning:</strong> Trading forex and CFDs carries a high level of risk. Only trade with money you can afford to lose.
             </div>
             <p>© <span id="current-year"></span> Structure Trade Lab. All rights reserved.</p>
             <p style="margin-top: 10px;">
                 <a href="/">Home</a> | 
                 <a href="https://blog.structuretradelab.com">Blog</a> | 
                 <a href="https://tools.structuretradelab.com">Tools</a> | 
-                <a href="/about">About</a> | 
-                <a href="https://structuretradelab.com/broker-setup/">Broker Setup</a>
+                <a href="/about">About</a>
             </p>
         </div>
     </footer>
 
-    <!-- JavaScript for Hamburger Menu & Year -->
     <script src="https://structuretradelab.com/assets/js/common.js" defer></script>
-    <script>
-        // Additional about page specific JavaScript
-        (function() {
-            // Copy email functionality
-            const copyBtn = document.getElementById('copyEmailBtn');
-            const copyFeedback = document.getElementById('copyFeedback');
-            
-            if (copyBtn) {
-                copyBtn.addEventListener('click', function() {
-                    const email = this.getAttribute('data-email');
-                    navigator.clipboard.writeText(email).then(() => {
-                        copyFeedback.style.display = 'inline-block';
-                        setTimeout(() => {
-                            copyFeedback.style.display = 'none';
-                        }, 2000);
-                    });
-                });
-            }
-            
-        })();
-    </script>
 </body>
 </html>

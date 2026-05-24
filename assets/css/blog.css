@@ -9,18 +9,18 @@
 .blog-hero {
     background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%);
     color: white;
-    padding: 60px 0;
+    padding: 40px 0;
     text-align: center;
 }
 
 .blog-hero h1 {
     font-size: 2.2rem;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     color: white;
 }
 
 .blog-hero p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     max-width: 700px;
     margin: 0 auto;
     color: #cce4f0;
