@@ -275,12 +275,10 @@ html.dark-mode .article-content th {
 .info-box.plain {
     border-left: none;
     border-radius:12px;
-    text-align: center;
 }
 
-.info-box.plain.no-align {
-    border-left: none;
-    border-radius:12px;
+.info-box.plain.align-center {
+    text-align: center;
 }
 
 
