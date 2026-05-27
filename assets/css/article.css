@@ -272,6 +272,10 @@ html.dark-mode .article-content th {
     border-radius: 0 12px 12px 0;
 }
 
+.info-box.example {
+    border-radius:0;
+}
+
 .info-box.plain {
     border-left: none;
     border-radius:12px;
@@ -288,6 +292,10 @@ html.dark-mode .article-content th {
     padding: 1em 1.5em;
     margin: 1.5em 0;
     border-radius: 0 12px 12px 0;
+}
+
+.warning-box.example {
+    border-radius:0;
 }
 
 html.dark-mode .info-box {
