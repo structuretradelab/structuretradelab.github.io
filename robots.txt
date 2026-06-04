@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://structuretradelab.com/sitemap.xml
