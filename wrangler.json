@@ -1,0 +1,10 @@
+{
+  "name": "structuretradelab",
+  "compatibility_date": "2026-07-28",
+  "build": {
+    "command": "jekyll build"
+  },
+  "assets": {
+    "directory": "./_site"
+  }
+}
